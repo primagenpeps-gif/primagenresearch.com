@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Primagen Research — Research-Grade Peptides for Longevity Science</title>
+<meta name="description" content="Primagen Research supplies third-party tested, >99% purity research peptides. Certificate of Analysis with every batch. For research purposes only." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          obsidian: '#06080C',
+          ink: '#0A0E14',
+          surface: '#0E141C',
+          accent: { DEFAULT: '#2DD4BF', soft: '#34D399', bright: '#5EEAD4' },
+          gold: '#E8C887',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          mono: ['"Space Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { color-scheme: dark; }
+  html, body { background: #06080C; }
+  body { -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+  ::selection { background: rgba(45,212,191,.25); color: #fff; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #06080C; }
+  ::-webkit-scrollbar-thumb { background: #1b2530; border-radius: 9px; border: 2px solid #06080C; }
+  ::-webkit-scrollbar-thumb:hover { background: #27343f; }
+
+  .font-display { font-optical-sizing: auto; }
+
+  /* Glass */
+  .glass { background: rgba(255,255,255,.035); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.08); }
+  .glass-strong { background: rgba(14,20,28,.82); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.08); }
+
+  /* Gradient text */
+  .text-grad { background: linear-gradient(135deg,#5EEAD4 0%,#34D399 60%,#2DD4BF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .text-grad-gold { background: linear-gradient(135deg,#F3DDB0,#E8C887 60%,#cf9f5e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* Hairline gradient border */
+  .ring-grad { position: relative; }
+  .ring-grad::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+    background: linear-gradient(140deg, rgba(94,234,212,.5), rgba(255,255,255,.05) 40%, rgba(232,200,135,.25));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+  }
+
+  /* Glows */
+  .glow-mint { box-shadow: 0 0 0 1px rgba(45,212,191,.18), 0 24px 80px -30px rgba(45,212,191,.45); }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); will-change: opacity, transform; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Card hover lift (transform only — no layout shift) */
+  .lift { transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease, border-color .3s ease; }
+  .lift:hover { transform: translateY(-6px); }
+
+  /* Keyframes */
+  @keyframes floaty { 0%,100% { transform: translateY(0) rotate(-2deg);} 50% { transform: translateY(-16px) rotate(2deg);} }
+  @keyframes orb { 0%,100% { transform: translate(0,0) scale(1);} 50% { transform: translate(40px,-30px) scale(1.12);} }
+  @keyframes orb2 { 0%,100% { transform: translate(0,0) scale(1);} 50% { transform: translate(-50px,30px) scale(1.15);} }
+  @keyframes shimmer { to { background-position: 200% center; } }
+  @keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+  @keyframes spin-slow { to { transform: rotate(360deg);} }
+  @keyframes pulse-ring { 0% { transform: scale(.85); opacity:.6;} 70%{opacity:0;} 100% { transform: scale(1.6); opacity:0;} }
+
+  .anim-float { animation: floaty 7s ease-in-out infinite; }
+  .anim-orb { animation: orb 16s ease-in-out infinite; }
+  .anim-orb2 { animation: orb2 20s ease-in-out infinite; }
+  .anim-spin-slow { animation: spin-slow 28s linear infinite; }
+
+  .marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+
+  .shine { background: linear-gradient(110deg,#cbd5e1 20%,#fff 40%,#cbd5e1 60%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 6s linear infinite; }
+
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+
+  .nav-link { position: relative; }
+  .nav-link::after { content:""; position:absolute; left:0; bottom:-4px; height:1px; width:0; background:linear-gradient(90deg,#5EEAD4,#34D399); transition: width .3s ease; }
+  .nav-link:hover::after { width:100%; }
+
+  /* Drawer / modal transitions */
+  .drawer { transition: transform .45s cubic-bezier(.16,1,.3,1); }
+  .fade { transition: opacity .35s ease; }
+
+  .qty-btn { transition: background .2s ease, color .2s ease; }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .anim-float, .anim-orb, .anim-orb2, .anim-spin-slow, .marquee-track, .shine { animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  [x-cloak]{display:none}
+</style>
+</head>
+
+<body class="font-sans text-slate-200 antialiased selection:text-white">
+
+<!-- ===== Announcement Bar ===== -->
+<div class="relative z-40 bg-gradient-to-r from-accent/10 via-emerald-400/10 to-accent/10 border-b border-white/5">
+  <div class="mx-auto max-w-7xl px-4 py-2 flex items-center justify-center gap-2 text-center">
+    <span class="hidden sm:inline-flex h-1.5 w-1.5 rounded-full bg-accent-soft shadow-[0_0_10px_2px_rgba(52,211,153,.7)]"></span>
+    <p class="font-mono text-[11px] sm:text-xs tracking-wider text-slate-300 uppercase">
+      Third-party tested · &gt;99% purity · Free cold-chain shipping over $200
+    </p>
+  </div>
+</div>
+
+<!-- ===== Navbar ===== -->
+<header id="nav" class="fixed inset-x-0 top-3 z-50 px-3 sm:px-4 transition-all duration-300">
+  <nav class="mx-auto max-w-7xl glass-strong rounded-2xl px-4 sm:px-6 h-16 flex items-center justify-between ring-grad">
+    <!-- Logo -->
+    <a href="#top" class="flex items-center gap-2.5 group cursor-pointer" aria-label="Primagen Research home">
+      <span class="relative grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-accent/25 to-emerald-500/10 ring-1 ring-accent/30">
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-accent-bright" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 3v4c0 2 1.5 3 3.5 4S12 17 12 19s-1.5 2-1.5 2"/><path d="M19 3v4c0 2-1.5 3-3.5 4S12 17 12 19"/><path d="M5 3h14M5 21h14"/><path d="M8 7h8M8.5 16h7"/>
+        </svg>
+      </span>
+      <span class="leading-none">
+        <span class="block font-display text-[17px] font-semibold tracking-tight text-white">Primagen</span>
+        <span class="block font-mono text-[9px] tracking-[0.25em] text-accent uppercase">Research</span>
+      </span>
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden lg:flex items-center gap-8 text-sm text-slate-300">
+      <a href="#catalog" class="nav-link hover:text-white transition-colors">Catalog</a>
+      <a href="#standard" class="nav-link hover:text-white transition-colors">The Standard</a>
+      <a href="#process" class="nav-link hover:text-white transition-colors">Process</a>
+      <a href="#faq" class="nav-link hover:text-white transition-colors">FAQ</a>
+    </div>
+
+    <!-- Right -->
+    <div class="flex items-center gap-2">
+      <a href="#catalog" class="hidden sm:inline-flex items-center h-10 px-4 rounded-xl text-sm font-medium text-slate-200 hover:text-white hover:bg-white/5 transition-colors cursor-pointer">Shop</a>
+      <button onclick="openCart()" aria-label="Open cart" class="relative inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-gradient-to-br from-accent to-emerald-500 text-obsidian font-semibold text-sm hover:brightness-110 transition cursor-pointer glow-mint">
+        <svg viewBox="0 0 24 24" class="h-4.5 w-4.5" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span class="hidden sm:inline">Cart</span>
+        <span id="cartCount" class="grid place-items-center min-w-5 h-5 px-1 rounded-full bg-obsidian/80 text-accent-bright text-[11px] font-bold ring-1 ring-white/10">0</span>
+      </button>
+      <button onclick="toggleMobile()" aria-label="Open menu" class="lg:hidden grid place-items-center h-10 w-10 rounded-xl glass cursor-pointer">
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden mx-auto max-w-7xl mt-2 glass-strong rounded-2xl p-3 ring-grad">
+    <div class="grid gap-1 text-sm">
+      <a href="#catalog" onclick="toggleMobile()" class="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer">Catalog</a>
+      <a href="#standard" onclick="toggleMobile()" class="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer">The Standard</a>
+      <a href="#process" onclick="toggleMobile()" class="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer">Process</a>
+      <a href="#faq" onclick="toggleMobile()" class="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer">FAQ</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== Hero ===== -->
+<section class="relative overflow-hidden pt-36 sm:pt-44 pb-24">
+  <!-- Background canvas -->
+  <canvas id="molecules" class="absolute inset-0 -z-10 h-full w-full opacity-70"></canvas>
+  <!-- Glow orbs -->
+  <div class="pointer-events-none absolute -z-10 inset-0">
+    <div class="absolute top-10 -left-20 h-96 w-96 rounded-full bg-accent/20 blur-[120px] anim-orb"></div>
+    <div class="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-emerald-500/15 blur-[130px] anim-orb2"></div>
+    <div class="absolute top-1/3 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/10 blur-[120px]"></div>
+  </div>
+  <!-- grid overlay -->
+  <div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000,transparent)"></div>
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Copy -->
+      <div class="lg:col-span-7">
+        <div class="reveal inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 mb-7">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-accent-soft opacity-75" style="animation:pulse-ring 2.4s cubic-bezier(0,0,.2,1) infinite"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-accent-soft"></span>
+          </span>
+          <span class="font-mono text-[11px] tracking-wider text-slate-300 uppercase">USA-Compounded · COA Verified</span>
+        </div>
+
+        <h1 class="reveal font-display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.4rem] font-semibold tracking-tight text-white">
+          The molecular<br/>
+          standard for <span class="text-grad italic">longevity</span><br/>
+          research.
+        </h1>
+
+        <p class="reveal mt-7 max-w-xl text-base sm:text-lg leading-relaxed text-slate-400">
+          Primagen Research supplies meticulously synthesized, third-party verified peptides at
+          <span class="text-slate-200 font-medium">&gt;99% purity</span> — each batch shipped with a Certificate of Analysis. Precision chemistry for the frontier of human optimization.
+        </p>
+
+        <div class="reveal mt-9 flex flex-wrap items-center gap-3">
+          <a href="#catalog" class="group inline-flex items-center gap-2 h-13 px-7 py-3.5 rounded-xl bg-gradient-to-br from-accent to-emerald-500 text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-mint">
+            Explore the catalog
+            <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#standard" class="inline-flex items-center gap-2 h-13 px-7 py-3.5 rounded-xl glass text-slate-100 font-medium hover:bg-white/[0.07] transition cursor-pointer">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            Our quality standard
+          </a>
+        </div>
+
+        <!-- trust row -->
+        <div class="reveal mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-slate-400">
+          <div class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/></svg> HPLC &amp; MS tested</div>
+          <div class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/></svg> Cold-chain shipped</div>
+          <div class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 24–48h dispatch</div>
+        </div>
+      </div>
+
+      <!-- Hero visual: floating vial -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative mx-auto w-full max-w-sm">
+          <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-b from-accent/20 to-transparent blur-2xl"></div>
+          <div class="relative glass rounded-[2rem] p-8 ring-grad overflow-hidden">
+            <!-- rotating ring -->
+            <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full border border-dashed border-white/10 anim-spin-slow"></div>
+            <div class="absolute -left-10 bottom-6 h-32 w-32 rounded-full border border-dashed border-accent/20 anim-spin-slow" style="animation-duration:40s"></div>
+
+            <div class="relative flex flex-col items-center">
+              <div class="anim-float">
+                <!-- Vial SVG -->
+                <svg width="120" height="200" viewBox="0 0 120 200" fill="none" class="drop-shadow-[0_20px_40px_rgba(45,212,191,.35)]">
+                  <defs>
+                    <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5EEAD4"/><stop offset="1" stop-color="#0d9488"/></linearGradient>
+                    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity=".18"/><stop offset="."35" stop-color="#ffffff" stop-opacity=".02"/><stop offset="1" stop-color="#ffffff" stop-opacity=".14"/></linearGradient>
+                  </defs>
+                  <rect x="44" y="6" width="32" height="20" rx="4" fill="#cbd5e1"/>
+                  <rect x="44" y="6" width="32" height="20" rx="4" fill="url(#glass)"/>
+                  <rect x="48" y="24" width="24" height="10" rx="2" fill="#94a3b8"/>
+                  <rect x="34" y="34" width="52" height="156" rx="22" fill="#0b1016" stroke="#1f2a35" stroke-width="1.5"/>
+                  <rect x="40" y="92" width="40" height="92" rx="16" fill="url(#liq)"/>
+                  <rect x="40" y="92" width="40" height="14" rx="7" fill="#7df0dc" opacity=".9"/>
+                  <rect x="34" y="34" width="52" height="156" rx="22" fill="url(#glass)"/>
+                  <rect x="44" y="48" width="6" height="120" rx="3" fill="#ffffff" opacity=".15"/>
+                  <rect x="40" y="118" width="40" height="46" rx="6" fill="#06080c" opacity=".55"/>
+                  <text x="60" y="138" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5EEAD4" letter-spacing="1">PRIMAGEN</text>
+                  <text x="60" y="152" text-anchor="middle" font-family="Space Mono, monospace" font-size="13" fill="#ffffff" font-weight="700">BPC-157</text>
+                </svg>
+              </div>
+              <div class="mt-4 text-center">
+                <p class="font-mono text-[10px] tracking-[0.3em] text-accent uppercase">Flagship</p>
+                <p class="font-display text-xl text-white mt-1">Body Protection Compound</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- floating stat chips -->
+          <div class="absolute -left-4 top-10 glass rounded-xl px-3 py-2 ring-grad anim-float" style="animation-delay:.6s">
+            <p class="font-mono text-[10px] text-slate-400">PURITY</p>
+            <p class="text-lg font-semibold text-grad">99.4%</p>
+          </div>
+          <div class="absolute -right-3 bottom-12 glass rounded-xl px-3 py-2 ring-grad anim-float" style="animation-delay:1.2s">
+            <p class="font-mono text-[10px] text-slate-400">MW</p>
+            <p class="text-sm font-semibold text-white">1419.5 <span class="text-slate-500">g/mol</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Logo / assurance marquee ===== -->
+<section class="relative border-y border-white/5 py-5 overflow-hidden marquee">
+  <div class="marquee-track gap-12 px-6 text-slate-500">
+    <!-- repeated twice for seamless loop -->
+    <div class="flex items-center gap-12 shrink-0" id="marqueeSet">
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Reverse-Phase HPLC</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 19V9m5 10V5m5 14v-7"/></svg> Mass Spectrometry</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/></svg> Sterile Lyophilization</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg> Cold-Chain Logistics</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/></svg> Endotoxin Screened</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7L9 18l-5-5"/></svg> Batch Traceability</span>
+    </div>
+    <div class="flex items-center gap-12 shrink-0" aria-hidden="true">
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Reverse-Phase HPLC</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 19V9m5 10V5m5 14v-7"/></svg> Mass Spectrometry</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/></svg> Sterile Lyophilization</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg> Cold-Chain Logistics</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/></svg> Endotoxin Screened</span>
+      <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7L9 18l-5-5"/></svg> Batch Traceability</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stats band ===== -->
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden glass ring-grad">
+      <div class="reveal p-7 sm:p-9 text-center bg-white/[0.01]">
+        <p class="font-display text-4xl sm:text-5xl font-semibold text-grad"><span class="countup" data-to="99.4" data-dec="1">0</span>%</p>
+        <p class="mt-2 text-sm text-slate-400">Average assay purity</p>
+      </div>
+      <div class="reveal p-7 sm:p-9 text-center bg-white/[0.01]">
+        <p class="font-display text-4xl sm:text-5xl font-semibold text-white"><span class="countup" data-to="100" data-dec="0">0</span>%</p>
+        <p class="mt-2 text-sm text-slate-400">Batches COA-verified</p>
+      </div>
+      <div class="reveal p-7 sm:p-9 text-center bg-white/[0.01]">
+        <p class="font-display text-4xl sm:text-5xl font-semibold text-white"><span class="countup" data-to="38" data-dec="0">0</span>k+</p>
+        <p class="mt-2 text-sm text-slate-400">Vials shipped worldwide</p>
+      </div>
+      <div class="reveal p-7 sm:p-9 text-center bg-white/[0.01]">
+        <p class="font-display text-4xl sm:text-5xl font-semibold text-white"><span class="countup" data-to="24" data-dec="0">0</span>h</p>
+        <p class="mt-2 text-sm text-slate-400">Median dispatch time</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== The Standard (bento) ===== -->
+<section id="standard" class="py-16 sm:py-24 scroll-mt-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="max-w-2xl">
+      <p class="reveal font-mono text-xs tracking-[0.25em] text-accent uppercase mb-4">The Primagen Standard</p>
+      <h2 class="reveal font-display text-3xl sm:text-5xl font-semibold tracking-tight text-white">Purity is not a claim.<br/>It's a <span class="text-grad italic">document.</span></h2>
+      <p class="reveal mt-5 text-slate-400 text-lg leading-relaxed">Every vial is traceable to an independent analysis. No marketing percentages — verifiable chromatograms, signed and batch-stamped.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-4 sm:gap-5">
+      <!-- big card -->
+      <div class="reveal md:col-span-2 md:row-span-2 relative glass rounded-3xl p-8 ring-grad lift overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl"></div>
+        <div class="relative">
+          <div class="inline-grid place-items-center h-12 w-12 rounded-2xl bg-accent/15 ring-1 ring-accent/30 text-accent-bright">
+            <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13l2 2 4-4"/></svg>
+          </div>
+          <h3 class="mt-6 font-display text-2xl text-white">Certificate of Analysis, every batch</h3>
+          <p class="mt-3 max-w-md text-slate-400 leading-relaxed">Scan the QR on your vial to pull the exact HPLC chromatogram and mass-spec report for that lot. Identity, purity, and net peptide content — independently confirmed before it ships.</p>
+
+          <!-- faux chromatogram -->
+          <div class="mt-7 rounded-2xl bg-obsidian/60 ring-1 ring-white/5 p-4">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-[11px] text-slate-500">LOT #PG-24-0917 · RP-HPLC</span>
+              <span class="font-mono text-[11px] text-accent">99.42% AUC</span>
+            </div>
+            <svg viewBox="0 0 400 90" class="w-full h-20" preserveAspectRatio="none">
+              <polyline points="0,82 60,80 120,79 175,78 185,30 195,10 205,30 215,78 280,77 340,76 400,75" fill="none" stroke="#5EEAD4" stroke-width="2"/>
+              <polyline points="0,88 400,88" stroke="#1f2a35" stroke-width="1"/>
+              <line x1="195" y1="10" x2="195" y2="88" stroke="#34d39955" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- small cards -->
+      <div class="reveal relative glass rounded-3xl p-7 ring-grad lift">
+        <div class="inline-grid place-items-center h-11 w-11 rounded-2xl bg-emerald-400/10 ring-1 ring-emerald-400/25 text-accent-soft">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3 class="mt-5 font-display text-lg text-white">&gt;99% target purity</h3>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Reverse-phase HPLC confirmation on every synthesized lot, no exceptions.</p>
+      </div>
+
+      <div class="reveal relative glass rounded-3xl p-7 ring-grad lift">
+        <div class="inline-grid place-items-center h-11 w-11 rounded-2xl bg-emerald-400/10 ring-1 ring-emerald-400/25 text-accent-soft">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+        </div>
+        <h3 class="mt-5 font-display text-lg text-white">Cold-chain integrity</h3>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Insulated, temperature-controlled packaging keeps lyophilized peptides stable in transit.</p>
+      </div>
+
+      <div class="reveal relative glass rounded-3xl p-7 ring-grad lift md:col-span-2">
+        <div class="flex items-start gap-5">
+          <div class="inline-grid place-items-center h-11 w-11 shrink-0 rounded-2xl bg-gold/10 ring-1 ring-gold/30 text-gold">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display text-lg text-white">Discreet, tracked &amp; insured</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-relaxed">Plain packaging, full tracking, and replacement guarantee on anything damaged in transit. Dispatched within 24–48 hours of order.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Catalog ===== -->
+<section id="catalog" class="py-16 sm:py-24 scroll-mt-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
+      <div>
+        <p class="reveal font-mono text-xs tracking-[0.25em] text-accent uppercase mb-4">Catalog</p>
+        <h2 class="reveal font-display text-3xl sm:text-5xl font-semibold tracking-tight text-white">Research compounds</h2>
+      </div>
+      <p class="reveal max-w-sm text-sm text-slate-400">All products supplied for laboratory and research use only. Pricing in USD per vial.</p>
+    </div>
+
+    <!-- filters -->
+    <div id="filters" class="reveal flex flex-wrap gap-2 mb-9"></div>
+
+    <!-- grid -->
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </div>
+</section>
+
+<!-- ===== Process timeline ===== -->
+<section id="process" class="py-16 sm:py-24 scroll-mt-24 relative overflow-hidden">
+  <div class="absolute inset-0 -z-10"><div class="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[120px]"></div></div>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="max-w-2xl mb-14">
+      <p class="reveal font-mono text-xs tracking-[0.25em] text-accent uppercase mb-4">From synthesis to your bench</p>
+      <h2 class="reveal font-display text-3xl sm:text-5xl font-semibold tracking-tight text-white">Four steps. Zero shortcuts.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-5">
+      <div class="reveal relative glass rounded-2xl p-6 ring-grad lift">
+        <span class="font-display text-5xl text-grad/30 text-grad">01</span>
+        <h3 class="mt-3 font-display text-lg text-white">Synthesis</h3>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Solid-phase peptide synthesis in cGMP-aligned facilities with documented sequence fidelity.</p>
+      </div>
+      <div class="reveal relative glass rounded-2xl p-6 ring-grad lift">
+        <span class="font-display text-5xl text-grad">02</span>
+        <h3 class="mt-3 font-display text-lg text-white">Verification</h3>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Independent HPLC + mass spectrometry confirm identity and purity before release.</p>
+      </div>
+      <div class="reveal relative glass rounded-2xl p-6 ring-grad lift">
+        <span class="font-display text-5xl text-grad">03</span>
+        <h3 class="mt-3 font-display text-lg text-white">Lyophilization</h3>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Sterile-filtered, freeze-dried, and sealed under inert conditions for maximum stability.</p>
+      </div>
+      <div class="reveal relative glass rounded-2xl p-6 ring-grad lift">
+        <span class="font-display text-5xl text-grad">04</span>
+        <h3 class="mt-3 font-display text-lg text-white">Cold dispatch</h3>
+        <p class="mt-2 text-sm text-slate-400 leading-relaxed">Packed with coolant, tracked, and on its way within 24–48 hours of your order.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="reveal font-mono text-xs tracking-[0.25em] text-accent uppercase mb-4">Trusted by researchers</p>
+      <h2 class="reveal font-display text-3xl sm:text-5xl font-semibold tracking-tight text-white">The consistency speaks for itself</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <figure class="reveal glass rounded-2xl p-7 ring-grad lift">
+        <div class="flex gap-0.5 text-gold mb-4">★★★★★</div>
+        <blockquote class="text-slate-300 leading-relaxed">"COA matched the vial on the first order and every order since. The chromatograms are clean — exactly what I need for reproducible work."</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <span class="grid place-items-center h-10 w-10 rounded-full bg-accent/15 text-accent-bright font-semibold ring-1 ring-accent/30">DR</span>
+          <span><span class="block text-sm font-medium text-white">Dr. R. Halvorsen</span><span class="block text-xs text-slate-500">Independent Research Lab</span></span>
+        </figcaption>
+      </figure>
+      <figure class="reveal glass rounded-2xl p-7 ring-grad lift">
+        <div class="flex gap-0.5 text-gold mb-4">★★★★★</div>
+        <blockquote class="text-slate-300 leading-relaxed">"Cold-chain packaging actually arrives cold. After three suppliers with degraded product, Primagen is the only one I reorder from."</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <span class="grid place-items-center h-10 w-10 rounded-full bg-accent/15 text-accent-bright font-semibold ring-1 ring-accent/30">MK</span>
+          <span><span class="block text-sm font-medium text-white">M. Køhler</span><span class="block text-xs text-slate-500">Biohacking Collective</span></span>
+        </figcaption>
+      </figure>
+      <figure class="reveal glass rounded-2xl p-7 ring-grad lift">
+        <div class="flex gap-0.5 text-gold mb-4">★★★★★</div>
+        <blockquote class="text-slate-300 leading-relaxed">"Dispatch is genuinely 24 hours and the batch traceability is unmatched. This is how a research supplier should operate."</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <span class="grid place-items-center h-10 w-10 rounded-full bg-accent/15 text-accent-bright font-semibold ring-1 ring-accent/30">AP</span>
+          <span><span class="block text-sm font-medium text-white">A. Petrova</span><span class="block text-xs text-slate-500">Longevity Research Group</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="py-16 sm:py-24 scroll-mt-24">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <p class="reveal font-mono text-xs tracking-[0.25em] text-accent uppercase mb-4">Questions</p>
+      <h2 class="reveal font-display text-3xl sm:text-5xl font-semibold tracking-tight text-white">Frequently asked</h2>
+    </div>
+    <div class="space-y-3" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ===== CTA / Newsletter ===== -->
+<section class="py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="reveal relative overflow-hidden glass rounded-3xl ring-grad p-10 sm:p-16 text-center">
+      <div class="absolute -z-10 inset-0"><div class="absolute -left-10 top-0 h-72 w-72 rounded-full bg-accent/20 blur-[100px] anim-orb"></div><div class="absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-emerald-500/15 blur-[100px] anim-orb2"></div></div>
+      <h2 class="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-white">Get new lots &amp; restocks first</h2>
+      <p class="mt-4 max-w-xl mx-auto text-slate-400">Join the research list for COA drops, new compound announcements, and members-only batch pricing.</p>
+      <form onsubmit="subscribe(event)" class="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+        <label for="email" class="sr-only">Email address</label>
+        <input id="email" type="email" required placeholder="you@lab.com" class="flex-1 h-12 px-4 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/40 transition" />
+        <button type="submit" class="h-12 px-6 rounded-xl bg-gradient-to-br from-accent to-emerald-500 text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-mint">Subscribe</button>
+      </form>
+      <p id="subMsg" class="mt-3 text-sm text-accent-soft h-5"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="border-t border-white/5 pt-16 pb-10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-2.5">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-accent/25 to-emerald-500/10 ring-1 ring-accent/30">
+            <svg viewBox="0 0 24 24" class="h-5 w-5 text-accent-bright" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4c0 2 1.5 3 3.5 4S12 17 12 19s-1.5 2-1.5 2"/><path d="M19 3v4c0 2-1.5 3-3.5 4S12 17 12 19"/><path d="M5 3h14M5 21h14"/></svg>
+          </span>
+          <span><span class="block font-display text-lg font-semibold text-white">Primagen Research</span><span class="block font-mono text-[9px] tracking-[0.25em] text-accent uppercase">Molecular Standard</span></span>
+        </div>
+        <p class="mt-5 max-w-sm text-sm text-slate-400 leading-relaxed">Research-grade peptides, verified by independent analysis and shipped cold. Precision chemistry for longevity science.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#" aria-label="X / Twitter" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-4 w-4 text-slate-300" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-7-6.1 7H1.7l8-9.2L1 2h7l4.8 6.3L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-4 w-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Telegram" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-4 w-4 text-slate-300" fill="currentColor"><path d="M21.9 4.3l-3.3 15.6c-.2 1.1-.9 1.4-1.9.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.9l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5l19.2-7.4c.9-.3 1.7.2 1.4 1.8z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="md:col-span-2"><h4 class="text-sm font-semibold text-white mb-4">Shop</h4><ul class="space-y-2.5 text-sm text-slate-400"><li><a href="#catalog" class="hover:text-accent transition cursor-pointer">All compounds</a></li><li><a href="#catalog" class="hover:text-accent transition cursor-pointer">Recovery</a></li><li><a href="#catalog" class="hover:text-accent transition cursor-pointer">Metabolic</a></li><li><a href="#catalog" class="hover:text-accent transition cursor-pointer">Supplies</a></li></ul></div>
+      <div class="md:col-span-2"><h4 class="text-sm font-semibold text-white mb-4">Company</h4><ul class="space-y-2.5 text-sm text-slate-400"><li><a href="#standard" class="hover:text-accent transition cursor-pointer">The Standard</a></li><li><a href="#process" class="hover:text-accent transition cursor-pointer">Process</a></li><li><a href="#faq" class="hover:text-accent transition cursor-pointer">FAQ</a></li><li><a href="#" class="hover:text-accent transition cursor-pointer">Contact</a></li></ul></div>
+      <div class="md:col-span-3"><h4 class="text-sm font-semibold text-white mb-4">Assurance</h4><ul class="space-y-2.5 text-sm text-slate-400"><li class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> COA with every batch</li><li class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg> Cold-chain shipping</li><li class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 text-accent" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/></svg> Damage replacement</li></ul></div>
+    </div>
+
+    <!-- compliance disclaimer -->
+    <div class="mt-12 rounded-2xl bg-amber-400/[0.04] border border-amber-300/10 p-5">
+      <p class="text-xs leading-relaxed text-slate-400"><span class="font-semibold text-amber-200/90">For research use only.</span> All products sold by Primagen Research are intended strictly for in-vitro laboratory research and development. They are <span class="text-slate-300">not for human or veterinary use</span>, not drugs, foods, cosmetics, or medical devices, and may not be misbranded, misused, mislabeled, or used as a food, drug, or cosmetic. By purchasing you confirm you are a qualified researcher 21 years or older. Statements herein have not been evaluated by the FDA.</p>
+    </div>
+
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© 2026 Primagen Research. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:text-slate-300 transition cursor-pointer">Privacy</a>
+        <a href="#" class="hover:text-slate-300 transition cursor-pointer">Terms</a>
+        <a href="#" class="hover:text-slate-300 transition cursor-pointer">Shipping</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Cart drawer ===== -->
+<div id="cartOverlay" class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none fade" onclick="closeCart()"></div>
+<aside id="cartDrawer" class="fixed top-0 right-0 z-[70] h-full w-full max-w-md glass-strong border-l border-white/10 drawer translate-x-full flex flex-col" role="dialog" aria-label="Shopping cart">
+  <div class="flex items-center justify-between px-6 h-18 py-5 border-b border-white/8">
+    <h3 class="font-display text-xl text-white flex items-center gap-2">Your cart <span id="cartItems" class="font-mono text-xs text-accent">(0)</span></h3>
+    <button onclick="closeCart()" aria-label="Close cart" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div id="cartList" class="flex-1 overflow-y-auto px-6 py-5 space-y-4"></div>
+  <div id="cartEmpty" class="flex-1 grid place-items-center px-6 text-center">
+    <div>
+      <div class="mx-auto grid place-items-center h-16 w-16 rounded-2xl glass mb-4"><svg viewBox="0 0 24 24" class="h-7 w-7 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></div>
+      <p class="text-slate-400">Your cart is empty.</p>
+      <button onclick="closeCart()" class="mt-4 text-sm text-accent hover:text-accent-bright transition cursor-pointer">Browse the catalog →</button>
+    </div>
+  </div>
+  <div id="cartFooter" class="border-t border-white/8 px-6 py-5 space-y-4 hidden">
+    <div class="flex items-center justify-between text-sm text-slate-400"><span>Subtotal</span><span id="cartSubtotal" class="text-white font-semibold text-lg">$0.00</span></div>
+    <p class="text-xs text-slate-500">Shipping &amp; taxes calculated at checkout.</p>
+    <button onclick="openCheckout()" class="w-full h-12 rounded-xl bg-gradient-to-br from-accent to-emerald-500 text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-mint">Proceed to checkout</button>
+  </div>
+</aside>
+
+<!-- ===== Quick view modal ===== -->
+<div id="qvOverlay" class="fixed inset-0 z-[80] grid place-items-center p-4 bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none fade" onclick="closeQuick(event)">
+  <div id="qvCard" class="w-full max-w-3xl glass-strong rounded-3xl ring-grad overflow-hidden scale-95 transition-transform duration-300" onclick="event.stopPropagation()"></div>
+</div>
+
+<!-- ===== Checkout modal ===== -->
+<div id="coOverlay" class="fixed inset-0 z-[90] grid place-items-center p-4 bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none fade" onclick="closeCheckout(event)">
+  <div id="coCard" class="w-full max-w-lg glass-strong rounded-3xl ring-grad overflow-hidden scale-95 transition-transform duration-300 max-h-[92vh] overflow-y-auto" onclick="event.stopPropagation()"></div>
+</div>
+
+<script>
+/* ============ DATA ============ */
+const CAT = {
+  recovery:  { label: 'Recovery & Repair', color: '#34D399' },
+  growth:    { label: 'Growth & GH',       color: '#22D3EE' },
+  metabolic: { label: 'Metabolic',         color: '#818CF8' },
+  cognitive: { label: 'Cognitive',         color: '#38BDF8' },
+  cosmetic:  { label: 'Cosmetic & Tan',    color: '#F4A98C' },
+  supplies:  { label: 'Lab Supplies',      color: '#94A3B8' },
+};
+
+const PRODUCTS = [
+  { id:'bpc157', name:'BPC-157', cat:'recovery', price:45, size:'5 mg', purity:'99.4%', mw:'1419.5', tag:'Flagship',
+    desc:'Body Protection Compound — a 15-amino-acid synthetic peptide widely studied for tissue and gut research models.' },
+  { id:'tb500', name:'TB-500', cat:'recovery', price:60, size:'5 mg', purity:'99.1%', mw:'4963.4',
+    desc:'Synthetic fragment of Thymosin Beta-4, investigated in actin-regulation and recovery research.' },
+  { id:'wolverine', name:'Wolverine Blend', cat:'recovery', price:95, size:'BPC-157 5mg + TB-500 5mg', purity:'99.2%', mw:'—', tag:'Best value',
+    desc:'Synergistic dual-peptide research blend pairing BPC-157 and TB-500 in a single reconstitution.' },
+  { id:'cjcipa', name:'CJC-1295 + Ipamorelin', cat:'growth', price:65, size:'5mg / 5mg (No DAC)', purity:'99.0%', mw:'—', tag:'Popular',
+    desc:'A growth-hormone secretagogue research pairing (No DAC) combining a GHRH analog with a selective ghrelin-receptor agonist.' },
+  { id:'tesa', name:'Tesamorelin', cat:'metabolic', price:85, size:'10 mg', purity:'99.0%', mw:'5135.9',
+    desc:'A stabilized GHRH analog studied in metabolic and visceral-adipose research contexts.' },
+  { id:'glp3', name:'GLP-3 RT', cat:'metabolic', price:120, size:'10 mg', purity:'99.0%', mw:'—', tag:'New',
+    desc:'Retatrutide-class triple-agonist research peptide for advanced metabolic investigation.' },
+  { id:'motsc', name:'MOTS-c', cat:'metabolic', price:70, size:'10 mg', purity:'99.1%', mw:'2174.6',
+    desc:'A mitochondrial-derived peptide studied for its role in metabolic regulation and cellular energy research.' },
+  { id:'semax', name:'Semax', cat:'cognitive', price:50, size:'30 mg', purity:'99.2%', mw:'813.9',
+    desc:'A heptapeptide of ACTH origin investigated in nootropic and neuroprotective research models.' },
+  { id:'ghkcu', name:'GHK-Cu', cat:'cosmetic', price:55, size:'50 mg', purity:'99.3%', mw:'340.8',
+    desc:'Copper tripeptide-1 widely studied in skin, collagen, and regenerative cosmetic research.' },
+  { id:'mt1', name:'Melanotan I (MT-1)', cat:'cosmetic', price:40, size:'10 mg', purity:'99.0%', mw:'1646.9',
+    desc:'An α-MSH analog studied for melanogenesis and photoprotection research applications.' },
+  { id:'mt2', name:'Melanotan II (MT-2)', cat:'cosmetic', price:40, size:'10 mg', purity:'99.0%', mw:'1024.2',
+    desc:'A cyclic melanocortin-receptor agonist analog investigated in pigmentation research.' },
+  { id:'bacwater', name:'Bacteriostatic Water', cat:'supplies', price:15, size:'30 mL · 0.9% BA', purity:'USP', mw:'—',
+    desc:'Sterile bacteriostatic water for injection — the standard reconstitution diluent for lyophilized research peptides.' },
+];
+
+const FAQS = [
+  { q:'Are your peptides third-party tested?', a:'Yes. Every batch is independently analyzed by reverse-phase HPLC and mass spectrometry. A Certificate of Analysis is generated per lot and accessible via the QR code on each vial.' },
+  { q:'How are orders shipped?', a:'Lyophilized peptides are packed with coolant in insulated, discreet packaging and dispatched within 24–48 hours. All shipments are tracked and insured, with free cold-chain shipping on orders over $200.' },
+  { q:'What does "for research use only" mean?', a:'Our products are supplied strictly for in-vitro laboratory and research purposes. They are not intended for human or veterinary consumption, and are not drugs, supplements, or medical devices.' },
+  { q:'How should I store the peptides?', a:'Lyophilized peptides are best stored at -20°C and are stable for extended periods. Once reconstituted with bacteriostatic water, store refrigerated at 2–8°C and use within the documented stability window.' },
+  { q:'What is your guarantee?', a:'If a vial arrives damaged or fails to match its Certificate of Analysis, we replace it. Reach out with your lot number and we will resolve it promptly.' },
+  { q:'Which payment methods do you accept?', a:'This demo uses a simulated checkout. In production, Primagen Research supports major cards and crypto via a PCI-compliant processor — no card data touches our servers.' },
+];
+
+/* ============ STATE ============ */
+let cart = {};      // id -> qty
+let activeFilter = 'all';
+
+const money = n => '$' + n.toFixed(2);
+const $ = s => document.querySelector(s);
+
+/* ============ VIAL SVG ============ */
+function vial(color, big){
+  const h = big ? 150 : 92;
+  return `<svg viewBox="0 0 60 110" width="${big?70:46}" height="${big?128:84}" fill="none" aria-hidden="true">
+    <rect x="22" y="2" width="16" height="10" rx="2" fill="#cbd5e1"/>
+    <rect x="24" y="11" width="12" height="6" rx="1.5" fill="#94a3b8"/>
+    <rect x="16" y="17" width="28" height="86" rx="12" fill="#0b1016" stroke="#1f2a35" stroke-width="1"/>
+    <rect x="19" y="48" width="22" height="52" rx="9" fill="${color}"/>
+    <rect x="19" y="48" width="22" height="7" rx="3.5" fill="#ffffff" opacity=".4"/>
+    <rect x="22" y="26" width="3" height="68" rx="1.5" fill="#ffffff" opacity=".14"/>
+  </svg>`;
+}
+
+/* ============ RENDER FILTERS ============ */
+function renderFilters(){
+  const cats = ['all', ...Object.keys(CAT)];
+  $('#filters').innerHTML = cats.map(c => {
+    const label = c==='all' ? 'All compounds' : CAT[c].label;
+    const on = activeFilter===c;
+    return `<button onclick="setFilter('${c}')" class="cursor-pointer px-4 h-10 rounded-full text-sm font-medium border transition-colors duration-200 ${on ? 'bg-accent text-obsidian border-accent' : 'glass text-slate-300 border-white/10 hover:text-white hover:border-white/20'}">${label}</button>`;
+  }).join('');
+}
+function setFilter(c){ activeFilter = c; renderFilters(); renderProducts(); }
+
+/* ============ RENDER PRODUCTS ============ */
+function renderProducts(){
+  const list = PRODUCTS.filter(p => activeFilter==='all' || p.cat===activeFilter);
+  $('#productGrid').innerHTML = list.map((p,i) => {
+    const c = CAT[p.cat];
+    return `<article class="reveal group relative glass rounded-3xl p-5 ring-grad lift cursor-pointer" style="transition-delay:${(i%3)*60}ms" onclick="quickView('${p.id}')">
+      <div class="flex items-start justify-between mb-1">
+        <span class="font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full" style="color:${c.color};background:${c.color}1a">${c.label}</span>
+        ${p.tag ? `<span class="font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full text-gold bg-gold/10 ring-1 ring-gold/20">${p.tag}</span>` : ''}
+      </div>
+      <div class="relative h-40 grid place-items-center my-2">
+        <div class="absolute h-28 w-28 rounded-full blur-2xl opacity-40 group-hover:opacity-70 transition-opacity" style="background:${c.color}"></div>
+        <div class="relative transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-3">${vial(c.color,true)}</div>
+      </div>
+      <h3 class="font-display text-xl text-white">${p.name}</h3>
+      <p class="mt-1 text-sm text-slate-400 line-clamp-2 leading-relaxed">${p.desc}</p>
+      <div class="mt-3 flex items-center gap-3 font-mono text-[11px] text-slate-500">
+        <span>${p.size}</span><span class="h-1 w-1 rounded-full bg-slate-600"></span><span class="text-accent/80">${p.purity}</span>
+      </div>
+      <div class="mt-4 flex items-center justify-between">
+        <span class="font-display text-2xl text-grad-gold">${money(p.price)}</span>
+        <button onclick="event.stopPropagation();addToCart('${p.id}')" class="inline-flex items-center gap-1.5 h-10 px-4 rounded-xl bg-white/5 ring-1 ring-white/10 text-sm font-medium text-white hover:bg-accent hover:text-obsidian hover:ring-accent transition-colors duration-200 cursor-pointer">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> Add
+        </button>
+      </div>
+    </article>`;
+  }).join('');
+  observeReveals();
+}
+
+/* ============ QUICK VIEW ============ */
+function quickView(id){
+  const p = PRODUCTS.find(x=>x.id===id); const c = CAT[p.cat];
+  $('#qvCard').innerHTML = `
+    <div class="grid sm:grid-cols-2">
+      <div class="relative p-8 grid place-items-center bg-obsidian/40 min-h-[260px]">
+        <div class="absolute h-44 w-44 rounded-full blur-3xl opacity-40" style="background:${c.color}"></div>
+        <div class="relative anim-float">${vial(c.color,true)}</div>
+        <button onclick="closeQuick()" aria-label="Close" class="absolute top-4 left-4 sm:hidden grid place-items-center h-9 w-9 rounded-lg glass cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="p-7 relative">
+        <button onclick="closeQuick()" aria-label="Close" class="hidden sm:grid absolute top-4 right-4 place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+        <span class="font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full" style="color:${c.color};background:${c.color}1a">${c.label}</span>
+        <h3 class="mt-4 font-display text-3xl text-white">${p.name}</h3>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">${p.desc}</p>
+        <dl class="mt-5 grid grid-cols-3 gap-3">
+          <div class="rounded-xl bg-white/[0.03] ring-1 ring-white/8 p-3"><dt class="font-mono text-[10px] text-slate-500 uppercase">Size</dt><dd class="mt-1 text-sm text-white">${p.size}</dd></div>
+          <div class="rounded-xl bg-white/[0.03] ring-1 ring-white/8 p-3"><dt class="font-mono text-[10px] text-slate-500 uppercase">Purity</dt><dd class="mt-1 text-sm text-accent">${p.purity}</dd></div>
+          <div class="rounded-xl bg-white/[0.03] ring-1 ring-white/8 p-3"><dt class="font-mono text-[10px] text-slate-500 uppercase">MW</dt><dd class="mt-1 text-sm text-white">${p.mw}</dd></div>
+        </dl>
+        <div class="mt-6 flex items-center justify-between">
+          <span class="font-display text-3xl text-grad-gold">${money(p.price)}</span>
+          <button onclick="addToCart('${p.id}');closeQuick()" class="inline-flex items-center gap-2 h-12 px-6 rounded-xl bg-gradient-to-br from-accent to-emerald-500 text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-mint">Add to cart</button>
+        </div>
+        <p class="mt-4 font-mono text-[10px] text-slate-600">For research use only · COA #PG-24-${Math.floor(Math.random()*9000+1000)}</p>
+      </div>
+    </div>`;
+  const o = $('#qvOverlay'); o.classList.remove('opacity-0','pointer-events-none'); $('#qvCard').classList.remove('scale-95'); document.body.style.overflow='hidden';
+}
+function closeQuick(e){ if(e && e.target!==$('#qvOverlay') && e.type==='click') {} const o=$('#qvOverlay'); o.classList.add('opacity-0','pointer-events-none'); $('#qvCard').classList.add('scale-95'); if(!cartOpen) document.body.style.overflow=''; }
+
+/* ============ CART ============ */
+let cartOpen = false;
+function addToCart(id){ cart[id]=(cart[id]||0)+1; updateCart(); pulseCart(); }
+function removeFromCart(id){ delete cart[id]; updateCart(); }
+function changeQty(id,d){ cart[id]=(cart[id]||0)+d; if(cart[id]<=0) delete cart[id]; updateCart(); }
+
+function cartTotals(){ let count=0,sub=0; for(const id in cart){ const p=PRODUCTS.find(x=>x.id===id); count+=cart[id]; sub+=p.price*cart[id]; } return {count,sub}; }
+
+function updateCart(){
+  const {count,sub}=cartTotals();
+  $('#cartCount').textContent=count; $('#cartItems').textContent=`(${count})`;
+  const ids=Object.keys(cart);
+  if(ids.length===0){ $('#cartList').classList.add('hidden'); $('#cartEmpty').classList.remove('hidden'); $('#cartFooter').classList.add('hidden'); }
+  else{
+    $('#cartList').classList.remove('hidden'); $('#cartEmpty').classList.add('hidden'); $('#cartFooter').classList.remove('hidden');
+    $('#cartList').innerHTML=ids.map(id=>{ const p=PRODUCTS.find(x=>x.id===id); const c=CAT[p.cat];
+      return `<div class="flex gap-4 glass rounded-2xl p-3">
+        <div class="relative h-20 w-16 shrink-0 grid place-items-center rounded-xl bg-obsidian/50">${vial(c.color,false)}</div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-start justify-between gap-2">
+            <div><h4 class="text-sm font-medium text-white truncate">${p.name}</h4><p class="font-mono text-[10px] text-slate-500">${p.size}</p></div>
+            <button onclick="removeFromCart('${id}')" aria-label="Remove" class="text-slate-500 hover:text-red-400 transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button>
+          </div>
+          <div class="mt-2 flex items-center justify-between">
+            <div class="inline-flex items-center rounded-lg ring-1 ring-white/10 overflow-hidden">
+              <button onclick="changeQty('${id}',-1)" aria-label="Decrease" class="qty-btn h-8 w-8 grid place-items-center text-slate-300 hover:bg-white/10 cursor-pointer">−</button>
+              <span class="w-8 text-center text-sm text-white">${cart[id]}</span>
+              <button onclick="changeQty('${id}',1)" aria-label="Increase" class="qty-btn h-8 w-8 grid place-items-center text-slate-300 hover:bg-white/10 cursor-pointer">+</button>
+            </div>
+            <span class="font-display text-grad-gold">${money(p.price*cart[id])}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+    $('#cartSubtotal').textContent=money(sub);
+  }
+}
+function pulseCart(){ const b=$('#cartCount'); b.animate([{transform:'scale(1)'},{transform:'scale(1.4)'},{transform:'scale(1)'}],{duration:300,easing:'ease'}); }
+function openCart(){ cartOpen=true; $('#cartOverlay').classList.remove('opacity-0','pointer-events-none'); $('#cartDrawer').classList.remove('translate-x-full'); document.body.style.overflow='hidden'; }
+function closeCart(){ cartOpen=false; $('#cartOverlay').classList.add('opacity-0','pointer-events-none'); $('#cartDrawer').classList.add('translate-x-full'); document.body.style.overflow=''; }
+
+/* ============ CHECKOUT (mock) ============ */
+function openCheckout(){
+  const {count,sub}=cartTotals(); const ship = sub>=200?0:12; const tax=+(sub*0.0).toFixed(2); const total=sub+ship;
+  $('#coCard').innerHTML=`
+    <form onsubmit="placeOrder(event)" class="p-7">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="font-display text-2xl text-white">Checkout</h3>
+        <button type="button" onclick="closeCheckout()" aria-label="Close" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="rounded-2xl bg-white/[0.03] ring-1 ring-white/8 p-4 mb-6 space-y-2">
+        <div class="flex justify-between text-sm text-slate-400"><span>${count} item${count>1?'s':''}</span><span class="text-white">${money(sub)}</span></div>
+        <div class="flex justify-between text-sm text-slate-400"><span>Cold-chain shipping</span><span class="${ship===0?'text-accent':'text-white'}">${ship===0?'FREE':money(ship)}</span></div>
+        <div class="h-px bg-white/8 my-1"></div>
+        <div class="flex justify-between"><span class="text-white font-medium">Total</span><span class="font-display text-xl text-grad-gold">${money(total)}</span></div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <div class="sm:col-span-2"><label for="co-name" class="block text-xs text-slate-400 mb-1.5">Full name</label><input id="co-name" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-accent/50 transition" placeholder="Jane Researcher"></div>
+        <div class="sm:col-span-2"><label for="co-email" class="block text-xs text-slate-400 mb-1.5">Email</label><input id="co-email" type="email" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-accent/50 transition" placeholder="you@lab.com"></div>
+        <div class="sm:col-span-2"><label for="co-addr" class="block text-xs text-slate-400 mb-1.5">Shipping address</label><input id="co-addr" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-accent/50 transition" placeholder="123 Lab Ave"></div>
+        <div><label for="co-card" class="block text-xs text-slate-400 mb-1.5">Card number</label><input id="co-card" inputmode="numeric" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-accent/50 transition" placeholder="4242 4242 4242 4242"></div>
+        <div class="grid grid-cols-2 gap-3">
+          <div><label for="co-exp" class="block text-xs text-slate-400 mb-1.5">Expiry</label><input id="co-exp" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-accent/50 transition" placeholder="12/28"></div>
+          <div><label for="co-cvc" class="block text-xs text-slate-400 mb-1.5">CVC</label><input id="co-cvc" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-accent/50 transition" placeholder="123"></div>
+        </div>
+      </div>
+      <button type="submit" class="mt-6 w-full h-12 rounded-xl bg-gradient-to-br from-accent to-emerald-500 text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-mint flex items-center justify-center gap-2">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Pay ${money(total)}
+      </button>
+      <p class="mt-3 text-center font-mono text-[10px] text-slate-600">Demo checkout — no real payment is processed.</p>
+    </form>`;
+  closeCart();
+  const o=$('#coOverlay'); o.classList.remove('opacity-0','pointer-events-none'); $('#coCard').classList.remove('scale-95'); document.body.style.overflow='hidden';
+}
+function closeCheckout(e){ if(e && e.type==='click' && e.target!==$('#coOverlay')) return; const o=$('#coOverlay'); o.classList.add('opacity-0','pointer-events-none'); $('#coCard').classList.add('scale-95'); document.body.style.overflow=''; }
+function placeOrder(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button[type=submit]'); btn.disabled=true; btn.innerHTML='<svg class="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity=".25"/><path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>';
+  setTimeout(()=>{
+    const order='PG-'+Math.floor(Math.random()*900000+100000);
+    $('#coCard').innerHTML=`<div class="p-10 text-center">
+      <div class="mx-auto grid place-items-center h-20 w-20 rounded-full bg-accent/15 ring-1 ring-accent/30 mb-6"><svg viewBox="0 0 24 24" class="h-10 w-10 text-accent-bright" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h3 class="font-display text-3xl text-white">Order confirmed</h3>
+      <p class="mt-3 text-slate-400">Thank you. A confirmation and Certificate of Analysis links have been sent to your email.</p>
+      <p class="mt-4 font-mono text-sm text-accent">Order #${order}</p>
+      <p class="mt-1 font-mono text-[11px] text-slate-500">Dispatching within 24–48h · cold-chain</p>
+      <button onclick="closeCheckout()" class="mt-7 h-11 px-7 rounded-xl bg-gradient-to-br from-accent to-emerald-500 text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-mint">Done</button>
+    </div>`;
+    cart={}; updateCart();
+  },1400);
+}
+
+/* ============ FAQ ============ */
+function renderFAQ(){
+  $('#faqList').innerHTML=FAQS.map(f=>`
+    <details class="reveal glass rounded-2xl ring-grad overflow-hidden">
+      <summary class="flex items-center justify-between gap-4 p-5 select-none">
+        <span class="text-white font-medium">${f.q}</span>
+        <span class="faq-icon shrink-0 grid place-items-center h-7 w-7 rounded-lg bg-white/5 ring-1 ring-white/10 text-accent transition-transform duration-300"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </summary>
+      <div class="px-5 pb-5 -mt-1 text-sm text-slate-400 leading-relaxed">${f.a}</div>
+    </details>`).join('');
+  observeReveals();
+}
+
+/* ============ NEWSLETTER ============ */
+function subscribe(e){ e.preventDefault(); $('#subMsg').textContent='✓ Subscribed — welcome to the research list.'; e.target.reset(); }
+
+/* ============ REVEAL OBSERVER ============ */
+let revObserver;
+function observeReveals(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); return; }
+  if(!revObserver){ revObserver=new IntersectionObserver((es)=>{ es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); revObserver.unobserve(en.target);} }); },{threshold:0.12, rootMargin:'0px 0px -40px 0px'}); }
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>revObserver.observe(el));
+}
+
+/* ============ COUNT UP ============ */
+function countUp(){
+  const els=document.querySelectorAll('.countup');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ob=new IntersectionObserver((es)=>{ es.forEach(en=>{ if(!en.isIntersecting) return; const el=en.target; const to=+el.dataset.to, dec=+el.dataset.dec; ob.unobserve(el);
+    if(reduce){ el.textContent=to.toFixed(dec); return; }
+    const dur=1400, t0=performance.now();
+    const step=(t)=>{ const p=Math.min((t-t0)/dur,1); const e=1-Math.pow(1-p,3); el.textContent=(to*e).toFixed(dec); if(p<1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }); },{threshold:0.5});
+  els.forEach(el=>ob.observe(el));
+}
+
+/* ============ NAV SCROLL ============ */
+function navScroll(){ const n=$('#nav'); window.addEventListener('scroll',()=>{ if(window.scrollY>20){ n.querySelector('nav').classList.add('shadow-2xl','shadow-black/40'); } else { n.querySelector('nav').classList.remove('shadow-2xl','shadow-black/40'); } },{passive:true}); }
+function toggleMobile(){ $('#mobileMenu').classList.toggle('hidden'); }
+
+/* ============ ESC closes overlays ============ */
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeQuick(); closeCheckout(); if(cartOpen) closeCart(); } });
+
+/* ============ MOLECULAR CANVAS ============ */
+function molecules(){
+  const cv=$('#molecules'); if(!cv) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx=cv.getContext('2d');
+  let w,h,dpr,nodes=[],raf=null,visible=true;
+  const COUNT = ()=> { const a=window.innerWidth; return a<640?16:a<1024?28:42; };
+  function size(){ dpr=Math.min(window.devicePixelRatio||1,1.5); const r=cv.getBoundingClientRect(); w=r.width; h=r.height; cv.width=w*dpr; cv.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  function init(){ size(); nodes=[]; const n=COUNT(); for(let i=0;i<n;i++){ nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.6+.6}); } }
+  function frame(){ if(!visible){ raf=null; return; } ctx.clearRect(0,0,w,h);
+    for(const p of nodes){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>w)p.vx*=-1; if(p.y<0||p.y>h)p.vy*=-1; }
+    for(let i=0;i<nodes.length;i++){ for(let j=i+1;j<nodes.length;j++){ const a=nodes[i],b=nodes[j]; const dx=a.x-b.x,dy=a.y-b.y; const d=Math.hypot(dx,dy);
+      if(d<130){ const o=(1-d/130)*0.5; ctx.strokeStyle='rgba(45,212,191,'+o+')'; ctx.lineWidth=.6; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); } } }
+    for(const p of nodes){ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283); ctx.fillStyle='rgba(94,234,212,.8)'; ctx.fill(); }
+    raf=requestAnimationFrame(frame);
+  }
+  function start(){ if(!raf) raf=requestAnimationFrame(frame); }
+  init(); start();
+  let to; window.addEventListener('resize',()=>{ clearTimeout(to); to=setTimeout(init,200); });
+  document.addEventListener('visibilitychange',()=>{ visible=!document.hidden; if(visible) start(); });
+  // pause when hero scrolled away
+  const io=new IntersectionObserver(es=>{ visible=es[0].isIntersecting && !document.hidden; if(visible) start(); }); io.observe(cv);
+}
+
+/* ============ INIT ============ */
+renderFilters(); renderProducts(); renderFAQ(); updateCart();
+observeReveals(); countUp(); navScroll(); molecules();
+</script>
+</body>
+</html>

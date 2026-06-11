@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Python cache (from the installed ui-ux-pro-max skill)
+__pycache__/
+*.py[cod]
+
+# Local Claude Code settings (machine-specific / may contain secrets)
+.claude/settings.local.json
+
+# Manual backups (git history makes these unnecessary)
+*-backup.html
+*.bak
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

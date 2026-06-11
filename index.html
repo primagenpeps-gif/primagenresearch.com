@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Primagen Research — Research-Grade Peptides, Verified & Trusted Across Canada</title>
+<meta name="description" content="Primagen Research supplies third-party tested, >99% purity research peptides with a Certificate of Analysis on every batch. Cold-chain shipped across Canada. For research use only." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          obsidian: '#06080C',
+          ink: '#080C0A',
+          surface: '#0E1512',
+          emerald: { DEFAULT:'#74BDBD', deep:'#4F9E9E', bright:'#A6DBDB', dark:'#2B5C5C' },
+          gold: { DEFAULT:'#E8C887', bright:'#F3DDB0', deep:'#C9A45C' },
+          cream: '#F5F1E8',
+        },
+        fontFamily: {
+          grotesk: ['"Space Grotesk"','system-ui','sans-serif'],
+          serif: ['Fraunces','serif'],
+          sans: ['Inter','system-ui','sans-serif'],
+          mono: ['"Space Mono"','monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { color-scheme: dark; }
+  html, body { background:#06080C; }
+  body { -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  ::selection { background:rgba(52,211,153,.25); color:#fff; }
+
+  ::-webkit-scrollbar { width:10px; }
+  ::-webkit-scrollbar-track { background:#06080C; }
+  ::-webkit-scrollbar-thumb { background:#1c2a22; border-radius:9px; border:2px solid #06080C; }
+  ::-webkit-scrollbar-thumb:hover { background:#27392e; }
+
+  .font-serif { font-optical-sizing:auto; }
+
+  .glass { background:rgba(255,255,255,.04); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,.08); }
+  .glass-strong { background:rgba(11,17,14,.85); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.08); }
+
+  .text-grad-em { background:linear-gradient(135deg,#C0E6E6 0%,#74BDBD 55%,#4F9E9E 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .text-gold { background:linear-gradient(135deg,#F7E7C0,#E8C887 55%,#C9A45C); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .ghost-word { color:transparent; -webkit-text-stroke:1.5px rgba(245,241,232,.5); text-shadow:0 1px 30px rgba(245,241,232,.08); }
+  @supports not ((-webkit-text-stroke:1px #000)) { .ghost-word { color:rgba(245,241,232,.35); } }
+
+  .ring-grad { position:relative; }
+  .ring-grad::before { content:""; position:absolute; inset:0; border-radius:inherit; padding:1px;
+    background:linear-gradient(140deg, rgba(110,231,183,.45), rgba(255,255,255,.05) 42%, rgba(232,200,135,.4));
+    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
+
+  .glow-em { box-shadow:0 0 0 1px rgba(116,189,189,.2), 0 22px 70px -28px rgba(79,158,158,.55); }
+  .glow-gold { box-shadow:0 0 0 1px rgba(232,200,135,.2), 0 22px 70px -28px rgba(201,164,92,.45); }
+
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); will-change:opacity,transform; }
+  .reveal.in { opacity:1; transform:none; }
+
+  .lift { transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, border-color .35s ease; }
+  .lift:hover { transform:translateY(-6px); }
+
+  @keyframes floaty { 0%,100%{transform:translateY(0) rotate(-1.5deg);} 50%{transform:translateY(-16px) rotate(1.5deg);} }
+  @keyframes orb { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(40px,-30px) scale(1.12);} }
+  @keyframes orb2 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-50px,30px) scale(1.15);} }
+  @keyframes shimmer { to { background-position:200% center; } }
+  @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @keyframes spin-slow { to{transform:rotate(360deg);} }
+  @keyframes pulse-ring { 0%{transform:scale(.85);opacity:.6;} 70%{opacity:0;} 100%{transform:scale(1.6);opacity:0;} }
+
+  .anim-float { animation:floaty 7s ease-in-out infinite; }
+  .anim-orb { animation:orb 16s ease-in-out infinite; }
+  .anim-orb2 { animation:orb2 20s ease-in-out infinite; }
+  .anim-spin-slow { animation:spin-slow 30s linear infinite; }
+
+  .marquee-track { display:flex; width:max-content; animation:marquee 38s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state:paused; }
+
+  .shine-gold { background:linear-gradient(110deg,#C9A45C 20%,#F7E7C0 40%,#C9A45C 60%); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:shimmer 6s linear infinite; }
+
+  details>summary{ list-style:none; cursor:pointer; } details>summary::-webkit-details-marker{ display:none; }
+  details[open] .faq-icon{ transform:rotate(45deg); }
+
+  .nav-link{ position:relative; } .nav-link::after{ content:""; position:absolute; left:0; bottom:-5px; height:1px; width:0; background:linear-gradient(90deg,#6EE7B7,#E8C887); transition:width .3s ease; } .nav-link:hover::after{ width:100%; }
+
+  .drawer{ transition:transform .45s cubic-bezier(.16,1,.3,1); }
+  .fade{ transition:opacity .35s ease; }
+  .carousel-track{ transition:transform .6s cubic-bezier(.16,1,.3,1); }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1!important; transform:none!important; transition:none!important; }
+    .anim-float,.anim-orb,.anim-orb2,.anim-spin-slow,.marquee-track,.shine-gold{ animation:none!important; }
+    html{ scroll-behavior:auto; }
+  }
+  [x-cloak]{ display:none; }
+</style>
+</head>
+
+<body class="font-sans text-slate-200">
+
+<!-- ============ MAIN SITE ============ -->
+<div id="site">
+
+<!-- Announcement -->
+<div class="relative z-40 bg-gradient-to-r from-emerald-deep/15 via-gold/10 to-emerald-deep/15 border-b border-white/5">
+  <div class="mx-auto max-w-7xl px-4 py-2 flex items-center justify-center gap-2 text-center">
+    <span class="hidden sm:inline-flex h-1.5 w-1.5 rounded-full bg-emerald-bright shadow-[0_0_10px_2px_rgba(110,231,183,.7)]"></span>
+    <p class="font-mono text-[11px] sm:text-xs tracking-wider text-slate-300 uppercase">Best-value research peptides · Free shipping across Canada over $200 · Bulk discounts available</p>
+  </div>
+</div>
+
+<!-- Navbar -->
+<header id="nav" class="fixed inset-x-0 top-3 z-50 px-3 sm:px-4 transition-all duration-300">
+  <nav class="mx-auto max-w-7xl glass-strong rounded-2xl px-4 sm:px-6 h-16 flex items-center justify-between ring-grad">
+    <a href="#top" class="flex items-center gap-2.5 group cursor-pointer" aria-label="Primagen Research home">
+      <span class="grid place-items-center h-9 w-9 text-emerald shrink-0">
+        <img src="assets/logo-mark.png" alt="Primagen Research" class="h-8 w-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg viewBox="0 0 48 48" fill="none" stroke="url(#mglow)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8" style="display:none"><path d="M24 4l17.3 10v20L24 44 6.7 34V14z"/><path d="M20 34V15h6a5.5 5.5 0 0 1 0 11H20"/></svg>
+      </span>
+      <span class="leading-none"><span class="block font-grotesk text-[15px] font-bold tracking-[0.08em] text-white">PRIMAGEN</span><span class="block font-grotesk text-[8px] font-semibold tracking-[0.45em] text-emerald">RESEARCH</span></span>
+    </a>
+
+    <div class="hidden lg:flex items-center gap-8 text-sm text-slate-300">
+      <a href="#top" class="nav-link hover:text-white transition-colors">Home</a>
+      <a href="#catalog" class="nav-link hover:text-white transition-colors">Shop</a>
+      <a href="#standard" class="nav-link hover:text-white transition-colors">The Standard</a>
+      <div class="relative group">
+        <button class="nav-link inline-flex items-center gap-1 hover:text-white transition-colors cursor-pointer">More <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute left-1/2 -translate-x-1/2 top-full pt-3 w-52">
+          <div class="glass-strong rounded-2xl p-2 ring-grad">
+            <a href="#testimonials" class="block px-3 py-2.5 rounded-xl text-sm hover:bg-white/5 transition-colors cursor-pointer">Reviews</a>
+            <a href="#faq" class="block px-3 py-2.5 rounded-xl text-sm hover:bg-white/5 transition-colors cursor-pointer">FAQ</a>
+            <a href="#contact" class="block px-3 py-2.5 rounded-xl text-sm hover:bg-white/5 transition-colors cursor-pointer">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button onclick="openAuth('signin')" aria-label="Account / sign in" class="grid place-items-center h-10 w-10 rounded-xl glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-slate-200" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></button>
+      <button onclick="openCart()" aria-label="Open cart" class="relative inline-flex items-center gap-2 h-10 px-3.5 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep text-obsidian font-semibold text-sm hover:brightness-110 transition cursor-pointer glow-em">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span id="cartCount" class="grid place-items-center min-w-5 h-5 px-1 rounded-full bg-obsidian/80 text-emerald-bright text-[11px] font-bold ring-1 ring-white/10">0</span>
+      </button>
+      <button onclick="toggleMobile()" aria-label="Open menu" class="lg:hidden grid place-items-center h-10 w-10 rounded-xl glass cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="lg:hidden hidden mx-auto max-w-7xl mt-2 glass-strong rounded-2xl p-3 ring-grad">
+    <div class="grid gap-1 text-sm">
+      <a href="#top" onclick="toggleMobile()" class="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer">Home</a>
+      <a href="#catalog" onclick="toggleMobile()" class="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer">Shop</a>
+      <a href="#standard" onclick="toggleMobile()" class="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer">The Standard</a>
+      <a href="#faq" onclick="toggleMobile()" class="px-4 py-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer">FAQ</a>
+      <button onclick="toggleMobile();openAuth('register')" class="text-left px-4 py-3 rounded-xl text-emerald hover:bg-white/5 transition-colors cursor-pointer">Create account</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="relative overflow-hidden pt-36 sm:pt-44 pb-24 min-h-screen flex items-center">
+  <canvas id="molecules" class="absolute inset-0 -z-10 h-full w-full opacity-60"></canvas>
+  <div class="pointer-events-none absolute -z-10 inset-0">
+    <div class="absolute top-10 -left-24 h-[26rem] w-[26rem] rounded-full bg-emerald-deep/20 blur-[130px] anim-orb"></div>
+    <div class="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-gold/12 blur-[140px] anim-orb2"></div>
+    <div class="absolute top-1/3 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald/10 blur-[120px]"></div>
+  </div>
+  <div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.05]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000,transparent)"></div>
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 w-full">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <div class="reveal inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 mb-7">
+          <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full rounded-full bg-emerald-bright opacity-75" style="animation:pulse-ring 2.4s cubic-bezier(0,0,.2,1) infinite"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-bright"></span></span>
+          <span class="font-mono text-[11px] tracking-wider text-slate-300 uppercase">Trusted by researchers across Canada</span>
+        </div>
+
+        <h1 class="reveal font-grotesk text-[2.7rem] leading-[1.02] sm:text-6xl lg:text-[4.6rem] font-bold tracking-tight text-cream">
+          The future of<br/>science, <span class="font-serif italic font-medium text-gold">bottled.</span>
+        </h1>
+
+        <p class="reveal mt-7 max-w-xl text-base sm:text-lg leading-relaxed text-slate-400">
+          Research-grade peptides at <span class="text-slate-200 font-medium">prices that actually make sense</span> — the same quality the big labs charge a fortune for, without the markup. Dependable results, honest pricing.
+        </p>
+
+        <div class="reveal mt-9 flex flex-wrap items-center gap-3">
+          <a href="#catalog" class="group inline-flex items-center gap-2 h-13 px-7 py-3.5 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-em">Explore more
+            <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#standard" class="inline-flex items-center gap-2 h-13 px-7 py-3.5 rounded-xl glass text-slate-100 font-medium hover:bg-white/[0.07] transition cursor-pointer ring-grad">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>Why Primagen</a>
+        </div>
+
+        <div class="reveal mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-slate-400">
+          <div class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-emerald" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Unbeatable value</div>
+          <div class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-emerald" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/></svg> Cold-chain shipped</div>
+          <div class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-emerald" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 24–48h dispatch</div>
+        </div>
+      </div>
+
+      <!-- Hero vial -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative mx-auto w-full max-w-sm">
+          <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-b from-emerald/20 to-transparent blur-2xl"></div>
+          <div class="relative glass rounded-[2rem] p-8 ring-grad overflow-hidden">
+            <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full border border-dashed border-white/10 anim-spin-slow"></div>
+            <div class="absolute -left-10 bottom-6 h-32 w-32 rounded-full border border-dashed border-gold/20 anim-spin-slow" style="animation-duration:42s"></div>
+            <div class="relative flex flex-col items-center">
+              <div class="w-full rounded-[1.4rem] bg-gradient-to-b from-white to-slate-100 p-4 ring-1 ring-white/10 overflow-hidden">
+                <img src="assets/vials-hero.png" alt="Primagen Research peptide vials — GLP-3 RT, BPC-157 and GHK-Cu" class="w-full h-auto object-contain anim-float" onerror="this.style.display='none';var f=document.getElementById('heroFallback');if(f)f.style.display='flex'">
+                <div id="heroFallback" class="hidden justify-center anim-float">
+                  <svg width="120" height="200" viewBox="0 0 130 210" fill="none">
+                    <rect x="49" y="6" width="32" height="20" rx="4" fill="#cbd5e1"/><rect x="53" y="24" width="24" height="10" rx="2" fill="#94a3b8"/>
+                    <rect x="39" y="34" width="52" height="166" rx="22" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <rect x="45" y="100" width="40" height="96" rx="16" fill="url(#hliq)"/>
+                    <rect x="45" y="126" width="40" height="50" rx="6" fill="#0a100d" opacity=".82"/>
+                    <text x="65" y="148" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#A6DBDB" letter-spacing="1">PRIMAGEN</text>
+                    <text x="65" y="163" text-anchor="middle" font-family="Space Mono, monospace" font-size="13" fill="#fff" font-weight="700">BPC-157</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="mt-4 text-center">
+                <p class="font-mono text-[10px] tracking-[0.3em] text-gold uppercase">Research-grade · trusted across Canada</p>
+                <p class="font-serif text-xl text-cream mt-1">Premium peptides, fair prices</p>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -left-4 top-10 glass rounded-xl px-3 py-2 ring-grad anim-float" style="animation-delay:.6s"><p class="font-mono text-[10px] text-slate-400">SAVE</p><p class="text-lg font-semibold text-grad-em">38%</p></div>
+          <div class="absolute -right-3 bottom-12 glass rounded-xl px-3 py-2 ring-grad anim-float" style="animation-delay:1.2s"><p class="font-mono text-[10px] text-slate-400">PRICE</p><p class="text-sm font-semibold text-gold">$89 <span class="text-slate-500">CAD</span></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- floating quality badge -->
+  <div class="reveal hidden md:flex absolute bottom-8 right-6 lg:right-10 max-w-xs items-center gap-3 glass-strong rounded-2xl p-4 ring-grad">
+    <span class="grid place-items-center h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-gold/20 to-emerald/10 ring-1 ring-gold/30"><svg viewBox="0 0 24 24" class="h-5 w-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.3 7.2 17l.9-5.4L4.2 7.7l5.4-.8z"/></svg></span>
+    <p class="text-xs text-slate-300 leading-relaxed">Premium quality at honest prices — <span class="text-cream font-medium">up to 40% below the big labs.</span></p>
+  </div>
+</section>
+
+<!-- ===== Marquee ===== -->
+<section class="relative border-y border-white/5 py-5 overflow-hidden marquee">
+  <div class="marquee-track gap-12 px-6 text-slate-500" id="mq"></div>
+</section>
+
+<!-- ===== Featured Products / Catalog ===== -->
+<section id="catalog" class="py-16 sm:py-24 scroll-mt-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-9">
+      <div>
+        <p class="reveal font-mono text-xs tracking-[0.25em] text-gold uppercase mb-4">Featured Products</p>
+        <h2 class="reveal font-grotesk text-3xl sm:text-5xl font-bold tracking-tight text-cream leading-[1.05]">The Essential<br/><span class="font-serif italic font-medium text-grad-em">Research Compounds</span></h2>
+      </div>
+      <button onclick="setFilter('all')" class="reveal self-start sm:self-end inline-flex items-center gap-2 h-12 px-6 rounded-full bg-cream text-obsidian font-semibold text-sm hover:bg-white transition cursor-pointer">View all products <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+
+    <div id="filters" class="reveal flex flex-wrap gap-2 mb-9"></div>
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+  </div>
+</section>
+
+<!-- ===== The Standard (bento) ===== -->
+<section id="standard" class="py-16 sm:py-24 scroll-mt-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="max-w-2xl">
+      <p class="reveal font-mono text-xs tracking-[0.25em] text-gold uppercase mb-4">The Primagen Promise</p>
+      <h2 class="reveal font-grotesk text-3xl sm:text-5xl font-bold tracking-tight text-cream leading-[1.05]">Premium quality,<br/>without the <span class="font-serif italic font-medium text-gold">premium price.</span></h2>
+      <p class="reveal mt-5 text-slate-400 text-lg leading-relaxed">The same research-grade compounds the big labs sell — at a fraction of the cost. Honest pricing, dependable quality, and discounts that reward repeat researchers.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-4 sm:gap-5">
+      <div class="reveal md:col-span-2 md:row-span-2 relative glass rounded-3xl p-8 ring-grad lift overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-emerald/10 blur-3xl"></div>
+        <div class="relative">
+          <div class="inline-grid place-items-center h-12 w-12 rounded-2xl bg-gold/15 ring-1 ring-gold/30 text-gold"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7l11 11-7 7L3 10V3z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+          <h3 class="mt-6 font-serif text-2xl text-cream">Up to 40% below the big labs</h3>
+          <p class="mt-3 max-w-md text-slate-400 leading-relaxed">Lean operations, direct sourcing, and no inflated markups mean you pay for the compound — not the marketing. The same dependable quality, at a price that respects your budget.</p>
+          <div class="mt-7 rounded-2xl bg-obsidian/60 ring-1 ring-white/5 p-5">
+            <div class="flex items-center justify-between mb-4"><span class="font-mono text-[11px] text-slate-500">BPC-157 · 10 mg · market comparison</span><span class="font-mono text-[11px] text-emerald">you save 38%</span></div>
+            <div class="space-y-3">
+              <div><div class="flex justify-between text-xs mb-1.5"><span class="text-slate-400">Typical lab</span><span class="font-mono text-slate-300">$145</span></div><div class="h-3 rounded-full bg-white/5 overflow-hidden"><div class="h-full rounded-full bg-slate-600" style="width:100%"></div></div></div>
+              <div><div class="flex justify-between text-xs mb-1.5"><span class="text-cream font-medium">Primagen Research</span><span class="font-mono text-gold">$89 CAD</span></div><div class="h-3 rounded-full bg-white/5 overflow-hidden"><div class="h-full rounded-full bg-gradient-to-r from-emerald to-emerald-deep" style="width:61%"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal relative glass rounded-3xl p-7 ring-grad lift"><div class="inline-grid place-items-center h-11 w-11 rounded-2xl bg-emerald/10 ring-1 ring-emerald/25 text-emerald"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3 class="mt-5 font-serif text-lg text-cream">Dependable quality</h3><p class="mt-2 text-sm text-slate-400 leading-relaxed">Every batch is checked for purity and consistency, so affordable never means unreliable.</p></div>
+      <div class="reveal relative glass rounded-3xl p-7 ring-grad lift"><div class="inline-grid place-items-center h-11 w-11 rounded-2xl bg-emerald/10 ring-1 ring-emerald/25 text-emerald"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></div><h3 class="mt-5 font-serif text-lg text-cream">Free, fast shipping</h3><p class="mt-2 text-sm text-slate-400 leading-relaxed">Free delivery on orders over $200, dispatched within 24–48 hours right across Canada.</p></div>
+      <div class="reveal relative glass rounded-3xl p-7 ring-grad lift md:col-span-2"><div class="flex items-start gap-5"><div class="inline-grid place-items-center h-11 w-11 shrink-0 rounded-2xl bg-gold/10 ring-1 ring-gold/30 text-gold"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><div><h3 class="font-serif text-lg text-cream">Bulk &amp; reorder discounts</h3><p class="mt-2 text-sm text-slate-400 leading-relaxed">The more you order, the more you save — tiered bulk pricing, member rates for repeat researchers, and early access to restocks.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section id="testimonials" class="py-16 sm:py-24 scroll-mt-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="reveal inline-flex items-center gap-2 mb-4"><span class="text-gold tracking-tight">★★★★★</span><span class="font-mono text-xs tracking-wider text-slate-400 uppercase">4.9 based on 334 reviews</span></div>
+      <h2 class="reveal font-grotesk text-3xl sm:text-5xl font-bold tracking-tight text-cream leading-[1.05]">Trusted by researchers<br/>across <span class="font-serif italic font-medium text-grad-em">Canada.</span></h2>
+    </div>
+
+    <div class="reveal relative overflow-hidden">
+      <div id="carousel" class="carousel-track flex"></div>
+    </div>
+    <div id="dots" class="flex items-center justify-center gap-2 mt-7"></div>
+
+    <!-- stats bar -->
+    <div class="reveal mt-12 rounded-3xl bg-gradient-to-br from-ink to-obsidian ring-1 ring-white/8 p-8 sm:p-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div><p class="font-grotesk text-4xl sm:text-5xl font-bold text-cream"><span class="countup" data-to="4.8" data-dec="1">0</span></p><p class="mt-2 text-sm text-slate-400">Average Rating</p></div>
+        <div><p class="font-grotesk text-4xl sm:text-5xl font-bold text-grad-em"><span class="countup" data-to="10" data-dec="0">0</span>k</p><p class="mt-2 text-sm text-slate-400">Canadian Researchers</p></div>
+        <div><p class="font-grotesk text-4xl sm:text-5xl font-bold text-cream"><span class="countup" data-to="98" data-dec="0">0</span>%</p><p class="mt-2 text-sm text-slate-400">Reorder Rate</p></div>
+        <div><p class="font-grotesk text-4xl sm:text-5xl font-bold text-gold"><span class="countup" data-to="40" data-dec="0">0</span>%</p><p class="mt-2 text-sm text-slate-400">Average Savings</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="py-16 sm:py-24 scroll-mt-24">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+    <div class="text-center mb-12"><p class="reveal font-mono text-xs tracking-[0.25em] text-gold uppercase mb-4">Questions</p><h2 class="reveal font-grotesk text-3xl sm:text-5xl font-bold tracking-tight text-cream">Frequently <span class="font-serif italic font-medium text-grad-em">asked</span></h2></div>
+    <div class="space-y-3" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="contact" class="py-16 sm:py-24 scroll-mt-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="reveal relative overflow-hidden glass rounded-3xl ring-grad p-10 sm:p-16 text-center">
+      <div class="absolute -z-10 inset-0"><div class="absolute -left-10 top-0 h-72 w-72 rounded-full bg-emerald/20 blur-[100px] anim-orb"></div><div class="absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-gold/15 blur-[100px] anim-orb2"></div></div>
+      <h2 class="font-grotesk text-3xl sm:text-5xl font-bold tracking-tight text-cream">Join the <span class="font-serif italic font-medium text-gold">research list</span></h2>
+      <p class="mt-4 max-w-xl mx-auto text-slate-400">Get COA drops, new compound announcements, and members-only batch pricing before anyone else.</p>
+      <form onsubmit="subscribe(event)" class="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+        <label for="email" class="sr-only">Email address</label>
+        <input id="email" type="email" required placeholder="you@lab.ca" class="flex-1 h-12 px-4 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald/50 focus:border-emerald/40 transition" />
+        <button type="submit" class="h-12 px-6 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-em">Subscribe</button>
+      </form>
+      <p id="subMsg" class="mt-3 text-sm text-emerald h-5"></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 pt-16 pb-10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3"><span class="grid place-items-center h-12 w-12 text-emerald shrink-0"><img src="assets/logo-mark.png" alt="Primagen Research" class="h-11 w-11 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg viewBox="0 0 48 48" fill="none" stroke="url(#mglow)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="h-11 w-11" style="display:none"><path d="M24 4l17.3 10v20L24 44 6.7 34V14z"/><path d="M20 34V15h6a5.5 5.5 0 0 1 0 11H20"/></svg></span><span class="leading-none"><span class="block font-grotesk text-2xl font-bold tracking-tight text-white">PRIMAGEN</span><span class="block font-grotesk text-[11px] font-semibold tracking-[0.4em] text-emerald mt-1">RESEARCH</span></span></div>
+        <p class="mt-5 max-w-sm text-sm text-slate-400 leading-relaxed">Research-grade peptides, verified by independent analysis and shipped cold across Canada. Precision chemistry for longevity science.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#" aria-label="X / Twitter" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-4 w-4 text-slate-300" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-7-6.1 7H1.7l8-9.2L1 2h7l4.8 6.3L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-4 w-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Telegram" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-4 w-4 text-slate-300" fill="currentColor"><path d="M21.9 4.3l-3.3 15.6c-.2 1.1-.9 1.4-1.9.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.9l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5l19.2-7.4c.9-.3 1.7.2 1.4 1.8z"/></svg></a>
+        </div>
+      </div>
+      <div class="md:col-span-2"><h4 class="text-sm font-semibold text-cream mb-4">Shop</h4><ul class="space-y-2.5 text-sm text-slate-400"><li><a href="#catalog" class="hover:text-emerald transition cursor-pointer">All compounds</a></li><li><a href="#catalog" class="hover:text-emerald transition cursor-pointer">Recovery</a></li><li><a href="#catalog" class="hover:text-emerald transition cursor-pointer">Metabolic</a></li><li><a href="#catalog" class="hover:text-emerald transition cursor-pointer">Supplies</a></li></ul></div>
+      <div class="md:col-span-2"><h4 class="text-sm font-semibold text-cream mb-4">Company</h4><ul class="space-y-2.5 text-sm text-slate-400"><li><a href="#standard" class="hover:text-emerald transition cursor-pointer">The Standard</a></li><li><a href="#faq" class="hover:text-emerald transition cursor-pointer">FAQ</a></li><li><button onclick="openAuth('register')" class="hover:text-emerald transition cursor-pointer">Create account</button></li></ul></div>
+      <div class="md:col-span-3"><h4 class="text-sm font-semibold text-cream mb-4">Assurance</h4><ul class="space-y-2.5 text-sm text-slate-400"><li class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 text-emerald" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Best-value pricing</li><li class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 text-emerald" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg> Free fast shipping</li><li class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 text-emerald" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/></svg> Bulk &amp; reorder discounts</li></ul></div>
+    </div>
+    <div class="mt-12 rounded-2xl bg-amber-400/[0.04] border border-amber-300/10 p-5"><p class="text-xs leading-relaxed text-slate-400"><span class="font-semibold text-amber-200/90">For research use only.</span> All products sold by Primagen Research are intended strictly for in-vitro laboratory research and development. They are <span class="text-slate-300">not for human or veterinary use</span>, not drugs, foods, cosmetics, or medical devices. By purchasing you confirm you are a qualified researcher 21 years or older. Statements herein have not been evaluated by Health Canada or the FDA.</p></div>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+      <span class="text-xs text-slate-500 mr-1">We accept</span>
+      <span class="inline-flex items-center gap-1.5 h-7 px-3 rounded-lg glass ring-1 ring-white/10 text-[11px] font-medium text-slate-300"><svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg> Visa · Mastercard · Amex</span>
+      <span class="inline-flex items-center gap-1.5 h-7 px-3 rounded-lg glass ring-1 ring-white/10 text-[11px] font-medium text-slate-300"><svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 8.5h4a2 2 0 0 1 0 4h-4m0 0h4.3a2 2 0 0 1 0 4H9.5m0-8V6.5m0 11V15"/></svg> Crypto (BTC · ETH · USDT)</span>
+      <span class="inline-flex items-center gap-1.5 h-7 px-3 rounded-lg glass ring-1 ring-white/10 text-[11px] font-medium text-slate-300"><svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-gold" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H7l-3 3z"/></svg> Interac e-Transfer</span>
+    </div>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500"><p>© 2026 Primagen Research. All rights reserved.</p><div class="flex items-center gap-4"><a href="#" class="hover:text-slate-300 transition cursor-pointer">Privacy</a><a href="#" class="hover:text-slate-300 transition cursor-pointer">Terms</a><a href="#" class="hover:text-slate-300 transition cursor-pointer">Shipping</a></div></div>
+  </div>
+</footer>
+</div><!-- /#site -->
+
+<!-- ============ AUTH VIEW ============ -->
+<div id="authView" class="fixed inset-0 z-[100] bg-obsidian opacity-0 pointer-events-none fade overflow-y-auto">
+  <div class="min-h-full grid lg:grid-cols-2">
+    <!-- left visual -->
+    <div class="relative hidden lg:block overflow-hidden bg-gradient-to-br from-ink via-emerald-dark/30 to-obsidian">
+      <div class="absolute inset-0"><div class="absolute top-1/4 left-1/4 h-72 w-72 rounded-full bg-emerald-deep/30 blur-[110px] anim-orb"></div><div class="absolute bottom-1/4 right-1/4 h-72 w-72 rounded-full bg-gold/15 blur-[110px] anim-orb2"></div></div>
+      <div class="absolute inset-0 opacity-[0.06]" style="background-image:radial-gradient(circle at 30% 40%, rgba(110,231,183,.8) 0 2px, transparent 2px),radial-gradient(circle at 60% 70%, rgba(232,200,135,.8) 0 2px, transparent 2px);background-size:48px 48px"></div>
+      <div class="relative h-full flex flex-col justify-between p-12">
+        <a onclick="closeAuth()" class="flex items-center gap-2.5 cursor-pointer w-fit"><span class="grid place-items-center h-9 w-9 text-emerald shrink-0"><img src="assets/logo-mark.png" alt="Primagen Research" class="h-8 w-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg viewBox="0 0 48 48" fill="none" stroke="url(#mglow)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8" style="display:none"><path d="M24 4l17.3 10v20L24 44 6.7 34V14z"/><path d="M20 34V15h6a5.5 5.5 0 0 1 0 11H20"/></svg></span><span class="leading-none"><span class="block font-grotesk text-[15px] font-bold tracking-[0.08em] text-white">PRIMAGEN</span><span class="block font-grotesk text-[8px] font-semibold tracking-[0.45em] text-emerald">RESEARCH</span></span></a>
+        <div class="grid place-items-center flex-1">
+          <div class="text-center anim-float">
+            <img src="assets/logo-mark.png" alt="Primagen Research" class="mx-auto h-32 w-32 object-contain drop-shadow-[0_18px_44px_rgba(79,158,158,.4)]" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg viewBox="0 0 48 48" fill="none" stroke="url(#mglow)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mx-auto h-32 w-32 drop-shadow-[0_18px_44px_rgba(79,158,158,.4)]" style="display:none"><path d="M24 4l17.3 10v20L24 44 6.7 34V14z"/><path d="M20 34V15h6a5.5 5.5 0 0 1 0 11H20"/></svg>
+            <div class="mt-7 leading-none">
+              <div class="ghost-word font-grotesk font-bold text-5xl xl:text-6xl tracking-tight">PRIMAGEN</div>
+              <div class="font-grotesk font-bold tracking-[0.45em] text-xl xl:text-2xl text-emerald mt-3 pl-[0.45em]">RESEARCH</div>
+            </div>
+          </div>
+        </div>
+        <div><p class="font-serif text-2xl text-cream leading-snug max-w-sm">"The molecular standard for longevity research."</p><p class="mt-3 font-mono text-xs text-emerald uppercase tracking-wider">&gt;99% purity · COA verified · shipped cold</p></div>
+      </div>
+    </div>
+
+    <!-- right form -->
+    <div class="relative flex items-center justify-center p-6 sm:p-12">
+      <button onclick="closeAuth()" aria-label="Close" class="absolute top-5 right-5 grid place-items-center h-10 w-10 rounded-xl glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <div class="w-full max-w-md">
+        <h2 id="authTitle" class="font-grotesk text-4xl sm:text-5xl font-bold tracking-tight text-cream">Create an account</h2>
+        <p class="mt-3 text-slate-400" id="authSwitch">Already have an account? <button onclick="switchAuth('signin')" class="text-emerald hover:text-emerald-bright transition cursor-pointer font-medium">Sign in</button></p>
+
+        <form onsubmit="submitAuth(event)" class="mt-8 space-y-4">
+          <div id="registerFields" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div><label for="a-name" class="sr-only">Name</label><input id="a-name" placeholder="Name" class="w-full h-13 px-4 py-3.5 rounded-xl bg-surface border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald/50 focus:border-emerald/40 transition" /></div>
+              <div><label for="a-email" class="sr-only">Email</label><input id="a-email" type="email" placeholder="Email" class="w-full h-13 px-4 py-3.5 rounded-xl bg-surface border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald/50 focus:border-emerald/40 transition" /></div>
+              <div><label for="a-phone" class="sr-only">Phone</label><input id="a-phone" type="tel" placeholder="Phone" class="w-full h-13 px-4 py-3.5 rounded-xl bg-surface border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald/50 focus:border-emerald/40 transition" /></div>
+              <div><label for="a-dob" class="sr-only">Date of birth</label><input id="a-dob" type="text" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" placeholder="MM/DD/YYYY" class="w-full h-13 px-4 py-3.5 rounded-xl bg-surface border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald/50 focus:border-emerald/40 transition" /></div>
+            </div>
+          </div>
+
+          <div id="signinEmail" class="hidden"><label for="a-email2" class="sr-only">Email</label><input id="a-email2" type="email" placeholder="Email" class="w-full h-13 px-4 py-3.5 rounded-xl bg-surface border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald/50 focus:border-emerald/40 transition" /></div>
+
+          <div class="relative"><label for="a-pass" class="sr-only">Password</label>
+            <input id="a-pass" type="password" placeholder="Password" class="w-full h-13 px-4 py-3.5 pr-12 rounded-xl bg-surface border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald/50 focus:border-emerald/40 transition" />
+            <button type="button" onclick="togglePass()" aria-label="Show password" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition cursor-pointer"><svg id="eyeIcon" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+
+          <div id="termsRow" class="space-y-3 pt-1">
+            <label class="flex items-start gap-3 cursor-pointer group"><input type="checkbox" id="a-terms" class="peer sr-only" /><span class="mt-0.5 grid place-items-center h-5 w-5 shrink-0 rounded-md border border-white/20 peer-checked:bg-emerald peer-checked:border-emerald transition-colors"><svg class="h-3.5 w-3.5 text-obsidian opacity-0 peer-checked:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span class="text-sm text-slate-300">I agree to the <a href="#" class="text-emerald hover:text-emerald-bright transition">Terms &amp; Conditions</a> and confirm I am a qualified researcher 21+.</span></label>
+            <label class="flex items-start gap-3 cursor-pointer group"><input type="checkbox" id="a-news" checked class="peer sr-only" /><span class="mt-0.5 grid place-items-center h-5 w-5 shrink-0 rounded-md border border-white/20 peer-checked:bg-emerald peer-checked:border-emerald transition-colors"><svg class="h-3.5 w-3.5 text-obsidian opacity-0 peer-checked:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span class="text-sm text-slate-300">Email me exclusive discounts and product information.</span></label>
+          </div>
+
+          <p id="authError" class="text-sm text-red-400 h-5"></p>
+          <button id="authSubmit" type="submit" class="w-full h-13 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-em">Register</button>
+        </form>
+        <p class="mt-6 text-center font-mono text-[10px] text-slate-600">Demo authentication — no account is actually created.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Cart drawer ============ -->
+<div id="cartOverlay" class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none fade" onclick="closeCart()"></div>
+<aside id="cartDrawer" class="fixed top-0 right-0 z-[70] h-full w-full max-w-md glass-strong border-l border-white/10 drawer translate-x-full flex flex-col" role="dialog" aria-label="Shopping cart">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-white/8"><h3 class="font-serif text-xl text-cream flex items-center gap-2">Your cart <span id="cartItems" class="font-mono text-xs text-emerald">(0)</span></h3><button onclick="closeCart()" aria-label="Close cart" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+  <div id="cartList" class="flex-1 overflow-y-auto px-6 py-5 space-y-4"></div>
+  <div id="cartEmpty" class="flex-1 grid place-items-center px-6 text-center"><div><div class="mx-auto grid place-items-center h-16 w-16 rounded-2xl glass mb-4"><svg viewBox="0 0 24 24" class="h-7 w-7 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></div><p class="text-slate-400">Your cart is empty.</p><button onclick="closeCart()" class="mt-4 text-sm text-emerald hover:text-emerald-bright transition cursor-pointer">Browse the catalog →</button></div></div>
+  <div id="cartFooter" class="border-t border-white/8 px-6 py-5 space-y-4 hidden"><div class="flex items-center justify-between text-sm text-slate-400"><span>Subtotal</span><span id="cartSubtotal" class="text-cream font-semibold text-lg">$0.00 CAD</span></div><p class="text-xs text-slate-500">Shipping &amp; taxes calculated at checkout.</p><button onclick="openCheckout()" class="w-full h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-em">Proceed to checkout</button></div>
+</aside>
+
+<!-- Quick view -->
+<div id="qvOverlay" class="fixed inset-0 z-[80] grid place-items-center p-4 bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none fade" onclick="closeQuick(event)"><div id="qvCard" class="w-full max-w-3xl glass-strong rounded-3xl ring-grad overflow-hidden scale-95 transition-transform duration-300" onclick="event.stopPropagation()"></div></div>
+
+<!-- Checkout -->
+<div id="coOverlay" class="fixed inset-0 z-[90] grid place-items-center p-4 bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none fade" onclick="closeCheckout(event)"><div id="coCard" class="w-full max-w-lg glass-strong rounded-3xl ring-grad overflow-hidden scale-95 transition-transform duration-300 max-h-[92vh] overflow-y-auto" onclick="event.stopPropagation()"></div></div>
+
+<!-- shared SVG defs (for auth vial gradients) -->
+<svg width="0" height="0" class="absolute"><defs>
+  <linearGradient id="hliq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A6DBDB"/><stop offset="1" stop-color="#2B5C5C"/></linearGradient>
+  <linearGradient id="hglass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".4" stop-color="#fff" stop-opacity=".02"/><stop offset="1" stop-color="#fff" stop-opacity=".14"/></linearGradient>
+  <linearGradient id="mglow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF6F6"/><stop offset=".28" stop-color="#AED5D5"/><stop offset=".55" stop-color="#5FA1A1"/><stop offset=".78" stop-color="#3C7E7E"/><stop offset="1" stop-color="#A6D4D4"/></linearGradient>
+</defs></svg>
+
+<script>
+/* ============ DATA ============ */
+const CAT = {
+  recovery:{ label:'Recovery & Repair', color:'#74BDBD' },
+  growth:{ label:'Growth & GH', color:'#22D3EE' },
+  metabolic:{ label:'Metabolic', color:'#818CF8' },
+  cognitive:{ label:'Cognitive', color:'#38BDF8' },
+  cosmetic:{ label:'Cosmetic & Tan', color:'#F4A98C' },
+  supplies:{ label:'Lab Supplies', color:'#94A3B8' },
+};
+const PRODUCTS = [
+  { id:'bpc157', name:'BPC-157', cat:'recovery', price:89, size:'10 mg', purity:'99.4%', mw:'1419.5', tag:'Best Seller',
+    desc:'Body Protection Compound — a 15-amino-acid synthetic peptide widely studied for tissue and gut research models.' },
+  { id:'tb500', name:'TB-500', cat:'recovery', price:99, size:'5 mg', purity:'99.1%', mw:'4963.4',
+    desc:'Synthetic fragment of Thymosin Beta-4, investigated in actin-regulation and recovery research.' },
+  { id:'wolverine', name:'Wolverine Blend', cat:'recovery', price:159, size:'BPC-157 5mg + TB-500 5mg', purity:'99.2%', mw:'—', tag:'Best Seller',
+    desc:'Synergistic dual-peptide research blend pairing BPC-157 and TB-500 in a single reconstitution.' },
+  { id:'cjcipa', name:'CJC-1295 + Ipamorelin', cat:'growth', price:119, size:'5mg / 5mg (No DAC)', purity:'99.0%', mw:'—', tag:'Popular',
+    desc:'A growth-hormone secretagogue research pairing (No DAC) combining a GHRH analog with a selective ghrelin-receptor agonist.' },
+  { id:'tesa', name:'Tesamorelin', cat:'metabolic', price:149, size:'10 mg', purity:'99.0%', mw:'5135.9', tag:'Best Seller',
+    desc:'A stabilized GHRH analog studied in metabolic and visceral-adipose research contexts.' },
+  { id:'glp3', name:'GLP-3 RT', cat:'metabolic', price:209, size:'10 mg', purity:'99.0%', mw:'—', tag:'Premium',
+    desc:'Retatrutide-class triple-agonist research peptide for advanced metabolic investigation.' },
+  { id:'motsc', name:'MOTS-c', cat:'metabolic', price:129, size:'10 mg', purity:'99.1%', mw:'2174.6', tag:'Popular',
+    desc:'A mitochondrial-derived peptide studied for its role in metabolic regulation and cellular energy research.' },
+  { id:'semax', name:'Semax', cat:'cognitive', price:95, size:'30 mg', purity:'99.2%', mw:'813.9',
+    desc:'A heptapeptide of ACTH origin investigated in nootropic and neuroprotective research models.' },
+  { id:'ghkcu', name:'GHK-Cu', cat:'cosmetic', price:99, size:'50 mg', purity:'99.3%', mw:'340.8', tag:'Popular',
+    desc:'Copper tripeptide-1 widely studied in skin, collagen, and regenerative cosmetic research.' },
+  { id:'mt1', name:'Melanotan I (MT-1)', cat:'cosmetic', price:79, size:'10 mg', purity:'99.0%', mw:'1646.9',
+    desc:'An α-MSH analog studied for melanogenesis and photoprotection research applications.' },
+  { id:'mt2', name:'Melanotan II (MT-2)', cat:'cosmetic', price:79, size:'10 mg', purity:'99.0%', mw:'1024.2',
+    desc:'A cyclic melanocortin-receptor agonist analog investigated in pigmentation research.' },
+  { id:'bacwater', name:'Bacteriostatic Water', cat:'supplies', price:19, size:'30 mL · 0.9% BA', purity:'USP', mw:'—',
+    desc:'Sterile bacteriostatic water for injection — the standard reconstitution diluent for lyophilized research peptides.' },
+];
+const TAG_STYLE = { 'Best Seller':'gold', 'Premium':'gold', 'Popular':'emerald', 'New':'emerald' };
+
+const TESTIMONIALS = [
+  { quote:'Same quality I was paying nearly double for elsewhere. Primagen is my default now — great product, honest price.', name:'Dr. R. Halvorsen', role:'Independent Research Lab', mono:'DR' },
+  { quote:'Fast shipping, fair prices, and the quality has been consistent order after order. Genuinely hard to beat on value.', name:'M. Tremblay', role:'Biohacking Collective, QC', mono:'MT' },
+  { quote:'Real 24-hour dispatch and the best value I have found in Canada. With the reorder discount it is a no-brainer.', name:'A. Petrova', role:'Longevity Research Group', mono:'AP' },
+  { quote:'Reliable quality without the premium price tag. Exactly what a working lab needs to stay on budget.', name:'J. Caron', role:'University Research Associate', mono:'JC' },
+  { quote:'I compared a dozen suppliers on price. Primagen won on value without cutting corners on quality.', name:'S. Nguyen', role:'Analytical Chemist', mono:'SN' },
+];
+
+const FAQS = [
+  { q:'How are your prices so competitive?', a:'We keep overhead low, source directly, and skip the middlemen and heavy marketing — then pass the savings straight to you. You get research-grade quality without paying a premium for someone else’s branding.' },
+  { q:'Is the quality still good at these lower prices?', a:'Yes. A lower price does not mean a lower standard. Every batch is checked for purity and consistency, so your results stay dependable and reproducible — affordable and reliable.' },
+  { q:'Do you offer discounts for bulk or repeat orders?', a:'Absolutely. Larger orders unlock tiered bulk pricing, and repeat researchers get member rates plus early access to restocks. Join the research list to be notified first.' },
+  { q:'How are orders shipped within Canada?', a:'Orders are packed to stay stable in transit and dispatched within 24–48 hours. Everything is tracked, with free shipping on orders over $200 CAD.' },
+  { q:'Which payment methods do you accept?', a:'Major credit and debit cards, cryptocurrency (Bitcoin, Ethereum, USDT, USDC, Litecoin), and Interac e-Transfer for Canadian customers. Crypto and e-Transfer orders ship as soon as payment is received.' },
+  { q:'What does "for research use only" mean?', a:'Our products are supplied strictly for in-vitro laboratory and research purposes. They are not intended for human or veterinary consumption, and are not drugs, supplements, or medical devices.' },
+  { q:'What is your guarantee?', a:'If a vial arrives damaged or is not right, we replace it — no hassle. Reach out with your order number and we will sort it out promptly.' },
+];
+
+/* ============ STATE ============ */
+let cart = {}, activeFilter = 'all', cartOpen = false, authMode = 'register', payMethod = 'card';
+const money = n => '$' + n.toFixed(2) + ' CAD';
+const $ = s => document.querySelector(s);
+
+/* ============ VIAL ============ */
+function vial(color, big){
+  return `<svg viewBox="0 0 60 110" width="${big?70:46}" height="${big?128:84}" fill="none" aria-hidden="true">
+    <rect x="22" y="2" width="16" height="10" rx="2" fill="#E9D9B0"/><rect x="24" y="11" width="12" height="6" rx="1.5" fill="#b89653"/>
+    <rect x="16" y="17" width="28" height="86" rx="12" fill="#0a100d" stroke="#243a30" stroke-width="1"/>
+    <rect x="19" y="48" width="22" height="52" rx="9" fill="${color}"/><rect x="19" y="48" width="22" height="7" rx="3.5" fill="#ffffff" opacity=".4"/>
+    <rect x="22" y="26" width="3" height="68" rx="1.5" fill="#ffffff" opacity=".14"/></svg>`;
+}
+
+/* ============ MARQUEE ============ */
+function renderMarquee(){
+  const items=['Best Price Guaranteed','Free Shipping Over $200','Bulk Order Discounts','Trusted Quality','Fast 24–48h Dispatch','Reorder & Save'];
+  const set=items.map(t=>`<span class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest"><svg viewBox="0 0 24 24" class="h-4 w-4 text-emerald/70" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> ${t}</span>`).join('');
+  $('#mq').innerHTML = `<div class="flex items-center gap-12 shrink-0">${set}</div><div class="flex items-center gap-12 shrink-0" aria-hidden="true">${set}</div>`;
+}
+
+/* ============ FILTERS / PRODUCTS ============ */
+function renderFilters(){
+  const cats=['all',...Object.keys(CAT)];
+  $('#filters').innerHTML=cats.map(c=>{ const label=c==='all'?'All compounds':CAT[c].label; const on=activeFilter===c;
+    return `<button onclick="setFilter('${c}')" class="cursor-pointer px-4 h-10 rounded-full text-sm font-medium border transition-colors duration-200 ${on?'bg-emerald text-obsidian border-emerald':'glass text-slate-300 border-white/10 hover:text-white hover:border-white/20'}">${label}</button>`;
+  }).join('');
+}
+function setFilter(c){ activeFilter=c; renderFilters(); renderProducts(); document.getElementById('catalog').scrollIntoView({behavior:'smooth',block:'start'}); }
+
+function badge(tag){ if(!tag) return ''; const g=TAG_STYLE[tag]==='gold';
+  return `<span class="absolute top-7 right-7 z-20 font-mono text-[9px] uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-sm shadow-lg shadow-black/30 ${g?'text-gold bg-obsidian/85 ring-1 ring-gold/40':'text-emerald bg-obsidian/85 ring-1 ring-emerald/40'}">${tag}</span>`;
+}
+function renderProducts(){
+  const list=PRODUCTS.filter(p=>activeFilter==='all'||p.cat===activeFilter);
+  $('#productGrid').innerHTML=list.map((p,i)=>{ const c=CAT[p.cat];
+    return `<article class="reveal group relative glass rounded-3xl p-5 ring-grad lift cursor-pointer" style="transition-delay:${(i%4)*60}ms" onclick="quickView('${p.id}')">
+      ${badge(p.tag)}
+      <div class="relative h-44 my-1 rounded-2xl bg-gradient-to-b from-slate-100 to-white overflow-hidden grid place-items-center">
+        <img src="assets/vial.png" alt="${p.name} research peptide vial" loading="lazy" class="relative h-40 w-auto object-contain transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="relative hidden transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-3">${vial(c.color,true)}</div>
+      </div>
+      <span class="font-mono text-[10px] uppercase tracking-wider" style="color:${c.color}">${c.label}</span>
+      <h3 class="mt-1 font-serif text-xl text-cream">${p.name}</h3>
+      <div class="mt-1.5 flex items-center gap-2 font-mono text-[11px] text-slate-500"><span>${p.size}</span><span class="h-1 w-1 rounded-full bg-slate-600"></span><span class="text-emerald/80">${p.purity}</span></div>
+      <div class="mt-4 flex items-center justify-between">
+        <span class="font-serif text-2xl text-gold">$${p.price.toFixed(2)} <span class="font-mono text-[10px] text-slate-500 align-middle">CAD</span></span>
+        <button onclick="event.stopPropagation();addToCart('${p.id}')" aria-label="Add ${p.name} to cart" class="inline-flex items-center gap-1.5 h-10 px-3.5 rounded-xl bg-white/5 ring-1 ring-white/10 text-sm font-medium text-white hover:bg-emerald hover:text-obsidian hover:ring-emerald transition-colors duration-200 cursor-pointer"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> Add</button>
+      </div>
+    </article>`;
+  }).join('');
+  observeReveals();
+}
+
+/* ============ QUICK VIEW ============ */
+function quickView(id){ const p=PRODUCTS.find(x=>x.id===id), c=CAT[p.cat];
+  $('#qvCard').innerHTML=`<div class="grid sm:grid-cols-2">
+    <div class="relative p-8 grid place-items-center bg-gradient-to-br from-slate-100 to-white min-h-[260px]"><img src="assets/vial.png" alt="${p.name} vial" class="relative h-60 w-auto object-contain anim-float" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="relative hidden anim-float">${vial(c.color,true)}</div></div>
+    <div class="p-7 relative">
+      <button onclick="closeQuick()" aria-label="Close" class="absolute top-4 right-4 grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <span class="font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full" style="color:${c.color};background:${c.color}1a">${c.label}</span>
+      <h3 class="mt-4 font-serif text-3xl text-cream">${p.name}</h3>
+      <p class="mt-3 text-sm text-slate-400 leading-relaxed">${p.desc}</p>
+      <dl class="mt-5 grid grid-cols-3 gap-3"><div class="rounded-xl bg-white/[0.03] ring-1 ring-white/8 p-3"><dt class="font-mono text-[10px] text-slate-500 uppercase">Size</dt><dd class="mt-1 text-sm text-white">${p.size}</dd></div><div class="rounded-xl bg-white/[0.03] ring-1 ring-white/8 p-3"><dt class="font-mono text-[10px] text-slate-500 uppercase">Purity</dt><dd class="mt-1 text-sm text-emerald">${p.purity}</dd></div><div class="rounded-xl bg-white/[0.03] ring-1 ring-white/8 p-3"><dt class="font-mono text-[10px] text-slate-500 uppercase">MW</dt><dd class="mt-1 text-sm text-white">${p.mw}</dd></div></dl>
+      <div class="mt-6 flex items-center justify-between"><span class="font-serif text-3xl text-gold">${money(p.price)}</span><button onclick="addToCart('${p.id}');closeQuick()" class="inline-flex items-center gap-2 h-12 px-6 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-em">Add to cart</button></div>
+      <p class="mt-4 font-mono text-[10px] text-slate-600">For research use only · Lot #PG-24-${Math.floor(Math.random()*9000+1000)}</p>
+    </div></div>`;
+  $('#qvOverlay').classList.remove('opacity-0','pointer-events-none'); $('#qvCard').classList.remove('scale-95'); document.body.style.overflow='hidden';
+}
+function closeQuick(){ $('#qvOverlay').classList.add('opacity-0','pointer-events-none'); $('#qvCard').classList.add('scale-95'); if(!cartOpen) document.body.style.overflow=''; }
+
+/* ============ CART ============ */
+function addToCart(id){ cart[id]=(cart[id]||0)+1; updateCart(); pulseCart(); }
+function removeFromCart(id){ delete cart[id]; updateCart(); }
+function changeQty(id,d){ cart[id]=(cart[id]||0)+d; if(cart[id]<=0) delete cart[id]; updateCart(); }
+function cartTotals(){ let count=0,sub=0; for(const id in cart){ const p=PRODUCTS.find(x=>x.id===id); count+=cart[id]; sub+=p.price*cart[id]; } return {count,sub}; }
+function updateCart(){ const {count,sub}=cartTotals(); $('#cartCount').textContent=count; $('#cartItems').textContent=`(${count})`; const ids=Object.keys(cart);
+  if(!ids.length){ $('#cartList').classList.add('hidden'); $('#cartEmpty').classList.remove('hidden'); $('#cartFooter').classList.add('hidden'); }
+  else{ $('#cartList').classList.remove('hidden'); $('#cartEmpty').classList.add('hidden'); $('#cartFooter').classList.remove('hidden');
+    $('#cartList').innerHTML=ids.map(id=>{ const p=PRODUCTS.find(x=>x.id===id), c=CAT[p.cat];
+      return `<div class="flex gap-4 glass rounded-2xl p-3"><div class="relative h-20 w-16 shrink-0 grid place-items-center rounded-xl bg-white overflow-hidden"><img src="assets/vial.png" alt="" class="h-full w-full object-contain p-1" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="hidden">${vial(c.color,false)}</div></div>
+        <div class="flex-1 min-w-0"><div class="flex items-start justify-between gap-2"><div><h4 class="text-sm font-medium text-white truncate">${p.name}</h4><p class="font-mono text-[10px] text-slate-500">${p.size}</p></div><button onclick="removeFromCart('${id}')" aria-label="Remove" class="text-slate-500 hover:text-red-400 transition cursor-pointer"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div>
+        <div class="mt-2 flex items-center justify-between"><div class="inline-flex items-center rounded-lg ring-1 ring-white/10 overflow-hidden"><button onclick="changeQty('${id}',-1)" aria-label="Decrease" class="h-8 w-8 grid place-items-center text-slate-300 hover:bg-white/10 transition cursor-pointer">−</button><span class="w-8 text-center text-sm text-white">${cart[id]}</span><button onclick="changeQty('${id}',1)" aria-label="Increase" class="h-8 w-8 grid place-items-center text-slate-300 hover:bg-white/10 transition cursor-pointer">+</button></div><span class="font-serif text-gold">${money(p.price*cart[id])}</span></div></div></div>`;
+    }).join(''); $('#cartSubtotal').textContent=money(sub); }
+}
+function pulseCart(){ const b=$('#cartCount'); b.animate([{transform:'scale(1)'},{transform:'scale(1.4)'},{transform:'scale(1)'}],{duration:300,easing:'ease'}); }
+function openCart(){ cartOpen=true; $('#cartOverlay').classList.remove('opacity-0','pointer-events-none'); $('#cartDrawer').classList.remove('translate-x-full'); document.body.style.overflow='hidden'; }
+function closeCart(){ cartOpen=false; $('#cartOverlay').classList.add('opacity-0','pointer-events-none'); $('#cartDrawer').classList.add('translate-x-full'); document.body.style.overflow=''; }
+
+/* ============ CHECKOUT ============ */
+function openCheckout(){ const {count,sub}=cartTotals(); const ship=sub>=200?0:14.95; const total=sub+ship;
+  $('#coCard').innerHTML=`<form onsubmit="placeOrder(event)" class="p-7">
+    <div class="flex items-center justify-between mb-6"><h3 class="font-serif text-2xl text-cream">Checkout</h3><button type="button" onclick="closeCheckout()" aria-label="Close" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/[0.07] cursor-pointer"><svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+    <div class="rounded-2xl bg-white/[0.03] ring-1 ring-white/8 p-4 mb-6 space-y-2"><div class="flex justify-between text-sm text-slate-400"><span>${count} item${count>1?'s':''}</span><span class="text-white">${money(sub)}</span></div><div class="flex justify-between text-sm text-slate-400"><span>Cold-chain shipping</span><span class="${ship===0?'text-emerald':'text-white'}">${ship===0?'FREE':money(ship)}</span></div><div class="h-px bg-white/8 my-1"></div><div class="flex justify-between"><span class="text-white font-medium">Total</span><span class="font-serif text-xl text-gold">${money(total)}</span></div></div>
+    <div class="grid sm:grid-cols-2 gap-3 mb-5">
+      <div class="sm:col-span-2"><label for="c-name" class="block text-xs text-slate-400 mb-1.5">Full name</label><input id="c-name" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald/50 transition" placeholder="Jane Researcher"></div>
+      <div class="sm:col-span-2"><label for="c-email" class="block text-xs text-slate-400 mb-1.5">Email</label><input id="c-email" type="email" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald/50 transition" placeholder="you@lab.ca"></div>
+      <div class="sm:col-span-2"><label for="c-addr" class="block text-xs text-slate-400 mb-1.5">Shipping address</label><input id="c-addr" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald/50 transition" placeholder="123 Lab Ave, Toronto ON"></div>
+    </div>
+    <p class="block text-xs text-slate-400 mb-2">Payment method</p>
+    <div id="payTabs" class="flex gap-2 mb-4"></div>
+    <div id="payFields"></div>
+    <button id="payBtn" type="submit" class="mt-6 w-full h-12 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-em flex items-center justify-center gap-2"></button>
+    <p class="mt-3 text-center font-mono text-[10px] text-slate-600">Demo checkout — no real payment is processed.</p></form>`;
+  setPay('card'); closeCart(); $('#coOverlay').classList.remove('opacity-0','pointer-events-none'); $('#coCard').classList.remove('scale-95'); document.body.style.overflow='hidden';
+}
+function closeCheckout(e){ if(e&&e.type==='click'&&e.target!==$('#coOverlay')) return; $('#coOverlay').classList.add('opacity-0','pointer-events-none'); $('#coCard').classList.add('scale-95'); document.body.style.overflow=''; }
+function setPay(m){ payMethod=m; const {sub}=cartTotals(); const ship=sub>=200?0:14.95; const total=sub+ship;
+  const ic={ card:'<svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>', crypto:'<svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 8.5h4a2 2 0 0 1 0 4h-4m0 0h4.3a2 2 0 0 1 0 4H9.5m0-8V6.5m0 11V15"/></svg>', interac:'<svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H7l-3 3z"/><path d="M8 9h8M8 12h5"/></svg>' };
+  $('#payTabs').innerHTML=[['card','Card'],['crypto','Crypto'],['interac','Interac']].map(([k,label])=>`<button type="button" onclick="setPay('${k}')" class="flex-1 h-11 rounded-xl text-sm font-medium flex items-center justify-center gap-2 border transition-colors duration-200 cursor-pointer ${payMethod===k?'bg-emerald text-obsidian border-emerald':'glass text-slate-300 border-white/10 hover:text-white'}">${ic[k]} ${label}</button>`).join('');
+  let f='';
+  if(m==='card'){
+    f=`<div class="grid sm:grid-cols-2 gap-3"><div class="sm:col-span-2"><label for="c-card" class="block text-xs text-slate-400 mb-1.5">Card number</label><input id="c-card" inputmode="numeric" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald/50 transition" placeholder="4242 4242 4242 4242"></div><div><label for="c-exp" class="block text-xs text-slate-400 mb-1.5">Expiry</label><input id="c-exp" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald/50 transition" placeholder="12/28"></div><div><label for="c-cvc" class="block text-xs text-slate-400 mb-1.5">CVC</label><input id="c-cvc" required class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald/50 transition" placeholder="123"></div></div>`;
+  } else if(m==='crypto'){
+    f=`<div class="rounded-2xl bg-white/[0.03] ring-1 ring-white/8 p-4 space-y-3"><div><label for="c-coin" class="block text-xs text-slate-400 mb-1.5">Pay with</label><select id="c-coin" class="w-full h-11 px-3.5 rounded-xl bg-obsidian/70 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-emerald/50 transition cursor-pointer"><option>Bitcoin (BTC)</option><option>Ethereum (ETH)</option><option>USDT (TRC-20)</option><option>USDC (ERC-20)</option><option>Litecoin (LTC)</option></select></div><p class="text-xs text-slate-400 leading-relaxed flex items-start gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 mt-0.5 text-emerald" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg> Place the order and we'll email a wallet address and the exact amount. Your order ships as soon as the payment confirms on-chain — usually within the hour. No card needed.</p></div>`;
+  } else {
+    f=`<div class="rounded-2xl bg-white/[0.03] ring-1 ring-white/8 p-4 space-y-2.5"><div class="flex items-center gap-2 text-sm text-cream font-medium"><svg viewBox="0 0 24 24" class="h-4 w-4 text-gold" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H7l-3 3z"/></svg> Interac e-Transfer (Canada)</div><p class="text-xs text-slate-400 leading-relaxed">After placing your order, send an Interac e-Transfer of <span class="text-gold font-medium">${money(total)}</span> to:</p><div class="rounded-lg bg-obsidian/70 ring-1 ring-white/10 px-3 py-2 font-mono text-sm text-emerald select-all">primagenpeps@gmail.com</div><p class="text-xs text-slate-400 leading-relaxed">Put your <span class="text-slate-200">order number</span> in the message. Most Canadian banks auto-deposit (no security question). We ship as soon as it lands.</p></div>`;
+  }
+  $('#payFields').innerHTML=f;
+  const btn=$('#payBtn');
+  if(m==='card') btn.innerHTML=`<svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Pay ${money(total)}`;
+  else if(m==='crypto') btn.innerHTML=`${ic.crypto} Place order &amp; pay with crypto`;
+  else btn.innerHTML=`${ic.interac} Place order &amp; send e-Transfer`;
+}
+function placeOrder(e){ e.preventDefault(); const {sub}=cartTotals(); const ship=sub>=200?0:14.95; const total=sub+ship; const m=payMethod; const btn=e.target.querySelector('button[type=submit]'); btn.disabled=true; btn.innerHTML='<svg class="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity=".25"/><path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>';
+  setTimeout(()=>{ const order='PG-'+Math.floor(Math.random()*900000+100000);
+    let head='Order confirmed', body='Thank you. A confirmation and tracking details have been sent to your email.';
+    if(m==='crypto'){ head='Order placed — send your crypto'; body='Check your email for the wallet address and the exact amount to send ('+money(total)+'). We ship the moment your payment confirms on-chain.'; }
+    else if(m==='interac'){ head='Order placed — send your e-Transfer'; body='Send an Interac e-Transfer of '+money(total)+' to primagenpeps@gmail.com with order '+order+' in the message. We ship as soon as it lands.'; }
+    $('#coCard').innerHTML=`<div class="p-10 text-center"><div class="mx-auto grid place-items-center h-20 w-20 rounded-full bg-emerald/15 ring-1 ring-emerald/30 mb-6"><svg viewBox="0 0 24 24" class="h-10 w-10 text-emerald-bright" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><h3 class="font-serif text-3xl text-cream">${head}</h3><p class="mt-3 text-slate-400">${body}</p><p class="mt-4 font-mono text-sm text-emerald">Order #${order}</p><p class="mt-1 font-mono text-[11px] text-slate-500">Dispatching within 24–48h · free shipping over $200 across Canada</p><button onclick="closeCheckout()" class="mt-7 h-11 px-7 rounded-xl bg-gradient-to-br from-emerald to-emerald-deep text-obsidian font-semibold hover:brightness-110 transition cursor-pointer glow-em">Done</button></div>`;
+    cart={}; updateCart();
+  },1400);
+}
+
+/* ============ TESTIMONIAL CAROUSEL ============ */
+let carIndex=0, perPage=2, carTimer=null;
+function tCard(t){ return `<div class="px-2.5 shrink-0" style="width:${100/perPage}%">
+  <figure class="glass rounded-2xl p-7 ring-grad h-full">
+    <div class="flex items-center gap-3 mb-5"><span class="grid place-items-center h-12 w-12 rounded-xl bg-gradient-to-br from-emerald/20 to-gold/10 ring-1 ring-emerald/30 text-emerald-bright font-semibold">${t.mono}</span><span class="text-gold">★★★★★</span></div>
+    <svg viewBox="0 0 24 24" class="h-7 w-7 text-emerald/40 mb-2" fill="currentColor"><path d="M10 7L7 12v5h5v-5H9l2-3zm8 0l-3 5v5h5v-5h-3l2-3z"/></svg>
+    <blockquote class="text-slate-300 leading-relaxed">${t.quote}</blockquote>
+    <figcaption class="mt-5"><span class="block text-sm font-medium text-cream">${t.name}</span><span class="block text-xs text-slate-500">${t.role}</span></figcaption>
+  </figure></div>`; }
+function renderCarousel(){ perPage = window.innerWidth<768?1:2; $('#carousel').innerHTML=TESTIMONIALS.map(tCard).join('');
+  const pages=Math.max(1,TESTIMONIALS.length-perPage+1); if(carIndex>pages-1) carIndex=pages-1;
+  $('#dots').innerHTML=Array.from({length:pages}).map((_,i)=>`<button onclick="goCar(${i})" aria-label="Go to slide ${i+1}" class="h-2 rounded-full transition-all duration-300 cursor-pointer ${i===carIndex?'w-6 bg-emerald':'w-2 bg-white/20 hover:bg-white/40'}"></button>`).join('');
+  moveCar();
+}
+function moveCar(){ $('#carousel').style.transform=`translateX(-${carIndex*(100/perPage)}%)`; }
+function goCar(i){ carIndex=i; renderCarousel(); resetCarTimer(); }
+function nextCar(){ const pages=Math.max(1,TESTIMONIALS.length-perPage+1); carIndex=(carIndex+1)%pages; renderCarousel(); }
+function resetCarTimer(){ if(carTimer) clearInterval(carTimer); if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; carTimer=setInterval(nextCar,5000); }
+
+/* ============ FAQ ============ */
+function renderFAQ(){ $('#faqList').innerHTML=FAQS.map(f=>`<details class="reveal glass rounded-2xl ring-grad overflow-hidden"><summary class="flex items-center justify-between gap-4 p-5 select-none"><span class="text-cream font-medium">${f.q}</span><span class="faq-icon shrink-0 grid place-items-center h-7 w-7 rounded-lg bg-white/5 ring-1 ring-white/10 text-emerald transition-transform duration-300"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-5 -mt-1 text-sm text-slate-400 leading-relaxed">${f.a}</div></details>`).join(''); observeReveals(); }
+
+/* ============ NEWSLETTER ============ */
+function subscribe(e){ e.preventDefault(); $('#subMsg').textContent='✓ Subscribed — welcome to the research list.'; e.target.reset(); }
+
+/* ============ AUTH ============ */
+function openAuth(mode){ switchAuth(mode||'register'); $('#authView').classList.remove('opacity-0','pointer-events-none'); document.body.style.overflow='hidden'; toggleMobileClose(); }
+function closeAuth(){ $('#authView').classList.add('opacity-0','pointer-events-none'); document.body.style.overflow=''; }
+function switchAuth(mode){ authMode=mode; const reg=mode==='register';
+  $('#authTitle').textContent=reg?'Create an account':'Welcome back';
+  $('#authSwitch').innerHTML=reg?`Already have an account? <button onclick="switchAuth('signin')" class="text-emerald hover:text-emerald-bright transition cursor-pointer font-medium">Sign in</button>`:`Need an account? <button onclick="switchAuth('register')" class="text-emerald hover:text-emerald-bright transition cursor-pointer font-medium">Create one</button>`;
+  $('#registerFields').classList.toggle('hidden',!reg); $('#signinEmail').classList.toggle('hidden',reg); $('#termsRow').classList.toggle('hidden',!reg);
+  $('#authSubmit').textContent=reg?'Register':'Sign in'; $('#authError').textContent='';
+}
+function togglePass(){ const p=$('#a-pass'); const show=p.type==='password'; p.type=show?'text':'password';
+  $('#eyeIcon').innerHTML=show?'<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-6.5 0-10-7-10-7a18 18 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c6.5 0 10 7 10 7a18 18 0 0 1-2.16 3.19M1 1l22 22"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>':'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>';
+}
+function submitAuth(e){ e.preventDefault();
+  if(authMode==='register'){ if(!$('#a-name').value||!$('#a-email').value){ $('#authError').textContent='Please complete the required fields.'; return; } if(!$('#a-terms').checked){ $('#authError').textContent='You must agree to the Terms & Conditions.'; return; } }
+  else if(!$('#a-email2').value){ $('#authError').textContent='Please enter your email.'; return; }
+  if(!$('#a-pass').value){ $('#authError').textContent='Please enter a password.'; return; }
+  const btn=$('#authSubmit'); btn.disabled=true; const orig=btn.textContent; btn.innerHTML='<svg class="h-5 w-5 animate-spin mx-auto" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity=".25"/><path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>';
+  setTimeout(()=>{ btn.disabled=false; btn.innerHTML='<span class="inline-flex items-center justify-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'+(authMode==='register'?'Account created':'Signed in')+'</span>'; setTimeout(()=>{ closeAuth(); btn.textContent=orig; },1100); },1200);
+}
+
+/* ============ REVEAL / COUNTUP / NAV ============ */
+let revObserver;
+function observeReveals(){ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); return; }
+  if(!revObserver){ revObserver=new IntersectionObserver(es=>{ es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); revObserver.unobserve(en.target);} }); },{threshold:0.12,rootMargin:'0px 0px -40px 0px'}); }
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>revObserver.observe(el));
+}
+function countUp(){ const els=document.querySelectorAll('.countup'); const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ob=new IntersectionObserver(es=>{ es.forEach(en=>{ if(!en.isIntersecting) return; const el=en.target, to=+el.dataset.to, dec=+el.dataset.dec; ob.unobserve(el);
+    if(reduce){ el.textContent=to.toFixed(dec); return; } const dur=1400,t0=performance.now();
+    const step=t=>{ const p=Math.min((t-t0)/dur,1), e=1-Math.pow(1-p,3); el.textContent=(to*e).toFixed(dec); if(p<1) requestAnimationFrame(step); }; requestAnimationFrame(step);
+  }); },{threshold:0.5}); els.forEach(el=>ob.observe(el));
+}
+function navScroll(){ const bar=$('#nav').querySelector('nav'); window.addEventListener('scroll',()=>{ if(window.scrollY>20) bar.classList.add('shadow-2xl','shadow-black/40'); else bar.classList.remove('shadow-2xl','shadow-black/40'); },{passive:true}); }
+function toggleMobile(){ $('#mobileMenu').classList.toggle('hidden'); }
+function toggleMobileClose(){ $('#mobileMenu').classList.add('hidden'); }
+
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeQuick(); closeCheckout(); if(cartOpen) closeCart(); closeAuth(); } });
+
+/* ============ MOLECULES CANVAS ============ */
+function molecules(){ const cv=$('#molecules'); if(!cv) return; if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx=cv.getContext('2d'); let w,h,dpr,nodes=[],raf=null,visible=true;
+  const COUNT=()=>{ const a=window.innerWidth; return a<640?16:a<1024?28:42; };
+  function size(){ dpr=Math.min(window.devicePixelRatio||1,1.5); const r=cv.getBoundingClientRect(); w=r.width; h=r.height; cv.width=w*dpr; cv.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  function init(){ size(); nodes=[]; const n=COUNT(); for(let i=0;i<n;i++) nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.6+.6}); }
+  function frame(){ if(!visible){ raf=null; return; } ctx.clearRect(0,0,w,h);
+    for(const p of nodes){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>w)p.vx*=-1; if(p.y<0||p.y>h)p.vy*=-1; }
+    for(let i=0;i<nodes.length;i++) for(let j=i+1;j<nodes.length;j++){ const a=nodes[i],b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+      if(d<130){ const o=(1-d/130)*0.5; ctx.strokeStyle='rgba(127,191,191,'+o+')'; ctx.lineWidth=.6; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); } }
+    for(const p of nodes){ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283); ctx.fillStyle='rgba(166,219,219,.85)'; ctx.fill(); }
+    raf=requestAnimationFrame(frame); }
+  function start(){ if(!raf) raf=requestAnimationFrame(frame); }
+  init(); start();
+  let to; window.addEventListener('resize',()=>{ clearTimeout(to); to=setTimeout(init,200); });
+  document.addEventListener('visibilitychange',()=>{ visible=!document.hidden; if(visible) start(); });
+  const io=new IntersectionObserver(es=>{ visible=es[0].isIntersecting && !document.hidden; if(visible) start(); }); io.observe(cv);
+}
+
+/* ============ INIT ============ */
+renderMarquee(); renderFilters(); renderProducts(); renderCarousel(); renderFAQ(); updateCart();
+observeReveals(); countUp(); navScroll(); molecules(); resetCarTimer();
+let crt; window.addEventListener('resize',()=>{ clearTimeout(crt); crt=setTimeout(renderCarousel,200); });
+$('#testimonials').addEventListener('mouseenter',()=>{ if(carTimer) clearInterval(carTimer); });
+$('#testimonials').addEventListener('mouseleave',resetCarTimer);
+</script>
+</body>
+</html>
