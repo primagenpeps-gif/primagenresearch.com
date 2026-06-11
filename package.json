@@ -1,0 +1,10 @@
+{
+  "name": "primagenresearch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Primagen Research — research peptide storefront (static site)",
+  "scripts": {
+    "build": "echo \"Static HTML site — no build step required\"",
+    "start": "npx --yes serve ."
+  }
+}

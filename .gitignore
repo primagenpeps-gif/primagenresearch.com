@@ -5,8 +5,8 @@ node_modules/
 __pycache__/
 *.py[cod]
 
-# Local Claude Code settings (machine-specific / may contain secrets)
-.claude/settings.local.json
+# Claude Code config + bundled skills (local tooling, not part of the website)
+.claude/
 
 # Manual backups (git history makes these unnecessary)
 *-backup.html
